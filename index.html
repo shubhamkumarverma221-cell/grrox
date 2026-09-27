@@ -1,0 +1,3070 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRROX - Everything Local</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: #f5f6f8;
+            color: #202124;
+        }
+
+        button,
+        input {
+            font: inherit;
+        }
+
+        button {
+            cursor: pointer;
+            border: 0;
+        }
+
+        /* HEADER */
+        .header {
+            background: #ffffff;
+            border-bottom: 1px solid #ddd;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .top-header {
+            height: 40px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            max-width: 1000px;
+            margin: auto;
+            padding: 0 15px;
+        }
+
+        .logo {
+            font-size: 30px;
+            font-weight: 800;
+            color: #111;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: #2874f0;
+        }
+
+        .search-box {
+            flex: 1;
+            display: flex;
+            max-width: 400px;
+            height: 18px;
+        }
+
+        .search-box input {
+            width: 100%;
+            border: 1px solid #ddd;
+            border-right: 0;
+            border-radius: 5px 0 0 5px;
+            padding: 0 15px;
+            outline: none;
+            background: #f7f7f7;
+        }
+
+        .search-box button {
+            width: 35px;
+            background: #68a7ef;
+            color: white;
+            border-radius: 0 7px 7px 0;
+        }
+
+        .city {
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .header-btn {
+            background: white;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .header-btn:hover {
+            color: #0180ff;
+        }
+
+        /* NAV */
+        .nav {
+            background: #fffefe;
+            border-top: 1px solid #b9b5b5;
+        }
+
+        .nav-inner {
+            max-width: 1400px;
+            margin: auto;
+            display: flex;
+            gap: 50px;
+            padding: 7px 50px;
+        }
+
+        .nav button {
+            background: none;
+            font-weight: none;
+            color: #444;
+        }
+
+        .nav button:hover {
+            color: #2874f0;
+        }
+
+        /* MAIN */
+        .container {
+            max-width: 1400px;
+            margin: auto;
+            padding: 10px;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 200px;
+            border-radius: 14px;
+            padding: 15px;
+            background: linear-gradient(120deg, #2874f0, #6c63ff);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            overflow: hidden;
+        }
+
+        .hero-text {
+            max-width: 450px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 25px;
+            opacity: .95;
+        }
+
+        .hero button {
+            background: white;
+            color: #2874f0;
+            padding: 13px 24px;
+            border-radius: 7px;
+            font-weight: bold;
+        }
+
+        .hero-icon {
+            font-size: 150px;
+            opacity: .5;
+        }
+
+        /* SECTION */
+        .section {
+            margin-top: 35px;
+        }
+
+        .section-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 18px;
+        }
+
+        .section-head h2 {
+            font-size: 25px;
+        }
+
+        .view-all {
+            color: #2874f0;
+            background: none;
+            font-weight: bold;
+        }
+
+        /* CATEGORY */
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            gap: 15px;
+        }
+
+        .category {
+            background: white;
+            border-radius: 10px;
+            padding: 20px 10px;
+            text-align: center;
+            border: 1px solid #eee;
+            transition: .2s;
+        }
+
+        .category:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 5px 18px rgba(0, 0, 0, .08);
+        }
+
+        .category-icon {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .category p {
+            font-weight: bold;
+        }
+
+        /* DEALS */
+        .deals {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #eee;
+            transition: .2s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 7px 20px rgba(0, 0, 0, .1);
+        }
+
+        .card-img {
+            height: 160px;
+            background: #e9eef9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 65px;
+        }
+
+        .card-content {
+            padding: 17px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #e8f5e9;
+            color: #188038;
+            padding: 5px 8px;
+            border-radius: 5px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .card h3 {
+            margin-bottom: 7px;
+        }
+
+        .card p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        .card button {
+            width: 100%;
+            background: #2874f0;
+            color: white;
+            padding: 10px;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        /* SHOPS */
+        .shops {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .shop {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #eee;
+        }
+
+        .shop-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #edf2ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .shop h3 {
+            margin-bottom: 7px;
+        }
+
+        .shop p {
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .shop button {
+            background: #f1f3f6;
+            padding: 9px 15px;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        /* SERVICES */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 15px;
+        }
+
+        .service {
+            background: white;
+            padding: 22px 10px;
+            text-align: center;
+            border-radius: 10px;
+            border: 1px solid #eee;
+        }
+
+        .service-icon {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        /* FOOTER */
+        .footer {
+            margin-top: 50px;
+            background: #172337;
+            color: #fff;
+            padding: 45px 25px;
+        }
+
+        .footer-inner {
+            max-width: 1400px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .footer h2 {
+            margin-bottom: 10px;
+        }
+
+        .footer p {
+            color: #bbb;
+            margin-bottom: 7px;
+        }
+
+        /* MODAL */
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, .55);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal-box {
+            background: white;
+            width: 500px;
+            max-width: 100%;
+            border-radius: 14px;
+            padding: 25px;
+            position: relative;
+        }
+
+        .close {
+            position: absolute;
+            right: 18px;
+            top: 15px;
+            font-size: 25px;
+            background: none;
+        }
+
+        .modal-icon {
+            font-size: 70px;
+            text-align: center;
+            margin: 15px;
+        }
+
+        .modal-box h2 {
+            margin-bottom: 10px;
+        }
+
+        .modal-box p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .modal-action {
+            margin-top: 20px;
+            width: 100%;
+            background: #2874f0;
+            color: #fff;
+            padding: 12px;
+            border-radius: 7px;
+            font-weight: bold;
+        }
+
+        /* MOBILE BOTTOM NAV */
+        .bottom-nav {
+            display: none;
+        }
+
+
+        /* DEALS PAGE */
+        .deals-page {
+            display: none;
+        }
+
+        .deals-page-head {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 22px;
+        }
+
+        .deals-page-head h1 {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .deals-page-head p {
+            color: #666;
+        }
+
+        .deal-toolbar {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 15px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 22px;
+        }
+
+        .deal-filter {
+            background: #f5f6f8;
+            color: #333;
+            border: 1px solid #ddd;
+            padding: 10px 15px;
+            border-radius: 7px;
+            font-weight: bold;
+        }
+
+        .deal-filter.active,
+        .deal-filter:hover {
+            background: #2874f0;
+            color: white;
+            border-color: #2874f0;
+        }
+
+        .deal-search {
+            flex: 1;
+            min-width: 220px;
+            border: 1px solid #ddd;
+            border-radius: 7px;
+            padding: 10px 14px;
+            outline: none;
+        }
+
+        .deal-search:focus {
+            border-color: #2874f0;
+        }
+
+        .deals-page-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .deal-page-card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: .2s;
+        }
+
+        .deal-page-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 7px 20px rgba(0, 0, 0, .10);
+        }
+
+        .deal-page-img {
+            height: 180px;
+            background: #eef3ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 70px;
+        }
+
+        .deal-page-content {
+            padding: 17px;
+        }
+
+        .deal-page-content h3 {
+            margin: 7px 0;
+        }
+
+        .deal-page-content p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 12px;
+        }
+
+        .deal-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 13px;
+        }
+
+        .deal-category-label {
+            color: #2874f0;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .deal-page-btn {
+            width: 100%;
+            background: #2874f0;
+            color: white;
+            padding: 11px;
+            border-radius: 7px;
+            font-weight: bold;
+        }
+
+        .back-home {
+            background: #f1f3f6;
+            padding: 10px 15px;
+            border-radius: 7px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        .empty-deals {
+            background: white;
+            border: 1px solid #eee;
+            border-radius: 12px;
+            padding: 45px 20px;
+            text-align: center;
+            grid-column: 1 / -1;
+        }
+
+        @media(max-width:1100px) {
+            .deals-page-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media(max-width:700px) {
+            .deals-page-head h1 {
+                font-size: 25px;
+            }
+
+            .deals-page-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .deal-toolbar {
+                flex-direction: column;
+            }
+
+            .deal-search {
+                width: 100%;
+            }
+
+            .deal-filter {
+                width: 100%;
+            }
+        }
+
+        /* RESPONSIVE */
+        @media(max-width:1100px) {
+
+            .categories {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .services {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .deals,
+            .shops {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media(max-width:700px) {
+
+            .top-header {
+                height: auto;
+                padding: 12px 15px;
+                flex-wrap: wrap;
+                gap: 12px;
+            }
+
+            .logo {
+                font-size: 25px;
+            }
+
+            .city {
+                display: none;
+            }
+
+            .header-btn {
+                margin-left: auto;
+            }
+
+            .search-box {
+                order: 3;
+                flex-basis: 100%;
+                max-width: none;
+            }
+
+            .nav {
+                display: none;
+            }
+
+            .container {
+                padding: 15px;
+                padding-bottom: 80px;
+            }
+
+            .hero {
+                min-height: 240px;
+                padding: 30px 25px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .hero-icon {
+                display: none;
+            }
+
+            .categories {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 8px;
+            }
+
+            .category {
+                padding: 13px 5px;
+            }
+
+            .category-icon {
+                font-size: 28px;
+            }
+
+            .category p {
+                font-size: 12px;
+            }
+
+            .deals,
+            .shops {
+                grid-template-columns: 1fr;
+            }
+
+            .services {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-inner {
+                flex-direction: column;
+            }
+
+            .bottom-nav {
+                position: fixed;
+                display: flex;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 65px;
+                background: white;
+                border-top: 1px solid #ddd;
+                z-index: 1500;
+                justify-content: space-around;
+            }
+
+            .bottom-nav button {
+                background: none;
+                font-size: 12px;
+                color: #555;
+            }
+
+            .bottom-nav button span {
+                display: block;
+                font-size: 21px;
+                margin-bottom: 3px;
+            }
+        }
+
+        /* EXPLORE PAGE */
+        .explore-page {
+            display: none;
+            max-width: 1400px;
+            margin: auto;
+            padding: 25px
+        }
+
+        .explore-head {
+            background: #fff;
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 20px;
+            border: 1px solid #e5e5e5
+        }
+
+        .explore-head h1 {
+            font-size: 30px;
+            margin-bottom: 8px
+        }
+
+        .explore-head p {
+            color: #666
+        }
+
+        .explore-tools {
+            display: flex;
+            gap: 12px;
+            margin-top: 18px;
+            flex-wrap: wrap
+        }
+
+        .explore-search {
+            flex: 1;
+            min-width: 240px;
+            padding: 13px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            outline: none
+        }
+
+        .explore-filters {
+            display: flex;
+            gap: 9px;
+            overflow-x: auto;
+            padding: 4px 0 15px
+        }
+
+        .explore-filter {
+            padding: 10px 15px;
+            border-radius: 20px;
+            background: #fff;
+            border: 1px solid #ddd;
+            white-space: nowrap;
+            font-weight: 600
+        }
+
+        .explore-filter.active,
+        .explore-filter:hover {
+            background: #2874f0;
+            color: #fff;
+            border-color: #2874f0
+        }
+
+        .explore-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px
+        }
+
+        .explore-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #e5e5e5;
+            transition: .2s
+        }
+
+        .explore-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 22px rgba(0, 0, 0, .09)
+        }
+
+        .explore-img {
+            height: 145px;
+            background: linear-gradient(135deg, #eef3ff, #f5f5ff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 58px
+        }
+
+        .explore-content {
+            padding: 17px
+        }
+
+        .explore-tag {
+            display: inline-block;
+            background: #eef4ff;
+            color: #2874f0;
+            padding: 5px 9px;
+            border-radius: 5px;
+            font-size: 12px;
+            font-weight: bold
+        }
+
+        .explore-content h3 {
+            margin: 10px 0 7px
+        }
+
+        .explore-content p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.5
+        }
+
+        .explore-btn {
+            width: 100%;
+            margin-top: 14px;
+            padding: 10px;
+            background: #2874f0;
+            color: #fff;
+            border-radius: 7px;
+            font-weight: bold
+        }
+
+        .back-home {
+            background: #111;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 7px;
+            margin-top: 15px
+        }
+
+        @media(max-width:1100px) {
+            .explore-grid {
+                grid-template-columns: repeat(3, 1fr)
+            }
+        }
+
+        @media(max-width:700px) {
+            .explore-page {
+                padding: 15px
+            }
+
+            .explore-head h1 {
+                font-size: 24px
+            }
+
+            .explore-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px
+            }
+
+            .explore-img {
+                height: 110px;
+                font-size: 44px
+            }
+
+            .explore-content {
+                padding: 12px
+            }
+
+            .explore-content h3 {
+                font-size: 15px
+            }
+        }
+
+        @media(max-width:450px) {
+            .explore-grid {
+                grid-template-columns: 1fr
+            }
+        }
+
+        /* BUSINESS PAGE */
+        .business-page {
+            background: #f5f6f8;
+            min-height: 70vh;
+            padding: 25px 0 60px
+        }
+
+        .business-wrap {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 25px
+        }
+
+        .back-btn {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px 16px;
+            font-weight: 700;
+            margin-bottom: 20px
+        }
+
+        .business-hero {
+            background: linear-gradient(120deg, #2874f0, #6c63ff);
+            color: #fff;
+            border-radius: 16px;
+            padding: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px
+        }
+
+        .business-kicker {
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            opacity: .9
+        }
+
+        .business-hero h1 {
+            font-size: 42px;
+            margin: 10px 0
+        }
+
+        .business-hero p {
+            font-size: 18px;
+            max-width: 650px;
+            line-height: 1.6
+        }
+
+        .business-hero-icon {
+            font-size: 100px
+        }
+
+        .primary-business-btn {
+            margin-top: 22px;
+            background: #fff;
+            color: #2874f0;
+            border-radius: 8px;
+            padding: 13px 22px;
+            font-weight: 800
+        }
+
+        .business-title {
+            margin: 35px 0 18px
+        }
+
+        .business-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px
+        }
+
+        .business-feature {
+            background: #fff;
+            border: 1px solid #e5e5e5;
+            border-radius: 14px;
+            padding: 25px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, .04)
+        }
+
+        .business-feature>div {
+            font-size: 40px
+        }
+
+        .business-feature h3 {
+            margin: 12px 0 8px
+        }
+
+        .business-feature p {
+            color: #666;
+            line-height: 1.55;
+            min-height: 72px
+        }
+
+        .business-feature button {
+            margin-top: 15px;
+            background: #2874f0;
+            color: #fff;
+            padding: 10px 16px;
+            border-radius: 7px;
+            font-weight: 700
+        }
+
+        .business-steps {
+            margin-top: 35px;
+            background: #fff;
+            border-radius: 14px;
+            padding: 28px;
+            border: 1px solid #e5e5e5
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 22px
+        }
+
+        .steps-grid div {
+            border: 1px solid #eee;
+            border-radius: 12px;
+            padding: 20px
+        }
+
+        .steps-grid span {
+            display: inline-flex;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            background: #2874f0;
+            color: #fff;
+            font-weight: 800
+        }
+
+        .steps-grid h3 {
+            margin: 12px 0 7px
+        }
+
+        .steps-grid p {
+            color: #666
+        }
+
+        @media(max-width:700px) {
+            .business-hero {
+                padding: 28px;
+                flex-direction: column;
+                align-items: flex-start
+            }
+
+            .business-hero h1 {
+                font-size: 30px
+            }
+
+            .business-hero-icon {
+                font-size: 65px
+            }
+
+            .business-features,
+            .steps-grid {
+                grid-template-columns: 1fr
+            }
+
+            .business-feature p {
+                min-height: auto
+            }
+        }
+
+        /* =========================================
+   GRROX PREMIUM UI UPDATE
+   ========================================= */
+
+        /* HEADER COMPACT */
+        .top-header {
+            max-width: 1500px;
+            height: 54px;
+            padding: 0 22px;
+            gap: 14px;
+        }
+
+        .logo {
+            font-size: 25px;
+            min-width: 105px;
+        }
+
+        .city {
+            order: 2;
+            font-size: 14px;
+            color: #27344d;
+            background: #f1f5ff;
+            padding: 8px 12px;
+            border-radius: 8px;
+        }
+
+        .search-box {
+            order: 3;
+            height: 36px;
+            max-width: 520px;
+            flex: 1;
+        }
+
+        .search-box input {
+            font-size: 14px;
+            background: #f8faff;
+            border: 1px solid #dce3f0;
+            padding: 0 13px;
+        }
+
+        .search-box button {
+            width: 42px;
+            background: #315bea;
+            border-radius: 0 7px 7px 0;
+        }
+
+        .header-btn {
+            padding: 8px 10px;
+            font-size: 14px;
+        }
+
+        .top-header .header-btn:last-child {
+            margin-left: auto;
+        }
+
+        /* NAVIGATION */
+        .nav-inner {
+            max-width: 1500px;
+            gap: 35px;
+            padding: 6px 22px;
+        }
+
+        .nav button {
+            font-size: 13px;
+        }
+
+        /* MAIN */
+        .container {
+            max-width: 1500px;
+            padding: 12px 22px;
+        }
+
+        /* SMALLER PREMIUM HERO */
+        .hero {
+            min-height: 145px;
+            padding: 22px 30px;
+            border-radius: 14px;
+            background:
+                linear-gradient(115deg,
+                    #172554 0%,
+                    #2447a8 48%,
+                    #4f46b8 100%);
+            box-shadow: 0 8px 25px rgba(31, 50, 110, .15);
+        }
+
+        .hero-text {
+            max-width: 620px;
+        }
+
+        .hero h1 {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .hero p {
+            font-size: 15px;
+            margin-bottom: 14px;
+        }
+
+        .hero button {
+            padding: 10px 18px;
+            border-radius: 7px;
+            font-size: 14px;
+        }
+
+        .hero-icon {
+            font-size: 95px;
+            opacity: .28;
+        }
+
+        /* SECTION SPACING */
+        .section {
+            margin-top: 25px;
+        }
+
+        .section-head {
+            margin-bottom: 12px;
+        }
+
+        .section-head h2 {
+            font-size: 21px;
+        }
+
+        /* SMALLER CATEGORIES */
+        .categories {
+            grid-template-columns: repeat(8, 1fr);
+            gap: 10px;
+        }
+
+        .category {
+            padding: 13px 7px;
+            border-radius: 9px;
+            min-height: 92px;
+        }
+
+        .category-icon {
+            font-size: 30px;
+            margin-bottom: 6px;
+        }
+
+        .category p {
+            font-size: 13px;
+        }
+
+        /* CATEGORY HOVER */
+        .category:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(39, 65, 130, .10);
+            border-color: #d7e0ff;
+        }
+
+        /* =========================================
+   DEALS = 4 COLUMNS
+   ========================================= */
+
+        .deals {
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .card {
+            border-radius: 11px;
+        }
+
+        .card-img {
+            height: 135px;
+            font-size: 55px;
+        }
+
+        .card-content {
+            padding: 14px;
+        }
+
+        .card h3 {
+            font-size: 16px;
+        }
+
+        .card p {
+            font-size: 13px;
+        }
+
+        .card button {
+            background: linear-gradient(135deg, #315bea, #5146c8);
+            padding: 9px;
+        }
+
+        /* SHOPS */
+        .shops {
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .shop {
+            padding: 16px;
+        }
+
+        .shop-icon {
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        /* SERVICES */
+        .services {
+            grid-template-columns: repeat(6, 1fr);
+            gap: 10px;
+        }
+
+        .service {
+            padding: 16px 8px;
+        }
+
+        .service-icon {
+            font-size: 30px;
+            margin-bottom: 6px;
+        }
+
+        /* =========================================
+   PREMIUM DEALS PAGE
+   ========================================= */
+
+        .deals-page {
+            max-width: 1500px;
+            padding: 18px 22px;
+        }
+
+        .deals-page-head {
+            padding: 18px 22px;
+            border-radius: 12px;
+        }
+
+        .deals-page-head h1 {
+            font-size: 26px;
+        }
+
+        .deal-toolbar {
+            padding: 12px;
+            border-radius: 10px;
+        }
+
+        .deals-page-grid {
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .deal-page-img {
+            height: 140px;
+            font-size: 55px;
+        }
+
+        .deal-page-content {
+            padding: 14px;
+        }
+
+        .deal-page-content h3 {
+            font-size: 16px;
+        }
+
+        .deal-page-btn {
+            background: linear-gradient(135deg, #315bea, #5146c8);
+        }
+
+        /* =========================================
+   EXPLORE PAGE - SMALL + 4 COLUMNS
+   ========================================= */
+
+        .explore-page {
+            max-width: 1500px;
+            padding: 18px 22px;
+        }
+
+        .explore-head {
+            padding: 18px 22px;
+            border-radius: 12px;
+        }
+
+        .explore-head h1 {
+            font-size: 26px;
+        }
+
+        .explore-head p {
+            font-size: 14px;
+        }
+
+        .explore-tools {
+            margin-top: 12px;
+        }
+
+        .explore-search {
+            padding: 10px 13px;
+        }
+
+        .explore-filters {
+            padding-bottom: 10px;
+        }
+
+        .explore-filter {
+            padding: 8px 13px;
+            font-size: 13px;
+        }
+
+        /* 4 COLUMNS */
+        .explore-grid {
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .explore-img {
+            height: 125px;
+            font-size: 52px;
+        }
+
+        .explore-content {
+            padding: 14px;
+        }
+
+        .explore-content h3 {
+            font-size: 16px;
+            margin: 8px 0 6px;
+        }
+
+        .explore-content p {
+            font-size: 13px;
+        }
+
+        .explore-btn {
+            margin-top: 10px;
+            padding: 9px;
+            background: linear-gradient(135deg, #315bea, #5146c8);
+        }
+
+        /* =========================================
+   BUSINESS PAGE PREMIUM
+   ========================================= */
+
+        .business-hero {
+            background:
+                linear-gradient(115deg,
+                    #172554,
+                    #2447a8,
+                    #5146c8);
+        }
+
+        .primary-business-btn,
+        .business-feature button {
+            border-radius: 7px;
+        }
+
+        /* PREMIUM BUTTONS */
+        .view-all {
+            color: #315bea;
+        }
+
+        .badge {
+            background: #edf3ff;
+            color: #315bea;
+        }
+
+        /* =========================================
+   TABLET
+   ========================================= */
+
+        @media(max-width:1100px) {
+
+            .categories {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .deals,
+            .shops,
+            .deals-page-grid,
+            .explore-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .services {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* =========================================
+   MOBILE
+   ========================================= */
+
+        @media(max-width:700px) {
+
+            .top-header {
+                height: auto;
+                padding: 10px 12px;
+            }
+
+            .logo {
+                font-size: 23px;
+            }
+
+            .city {
+                order: 2;
+                font-size: 12px;
+                padding: 6px 9px;
+            }
+
+            .search-box {
+                order: 4;
+                flex-basis: 100%;
+                max-width: none;
+                height: 35px;
+            }
+
+            .top-header .header-btn:last-child {
+                margin-left: auto;
+            }
+
+            .hero {
+                min-height: 175px;
+                padding: 20px;
+            }
+
+            .hero h1 {
+                font-size: 26px;
+            }
+
+            .hero p {
+                font-size: 14px;
+                margin-bottom: 12px;
+            }
+
+            .hero-icon {
+                display: none;
+            }
+
+            .categories {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 7px;
+            }
+
+            .category {
+                min-height: 78px;
+                padding: 10px 4px;
+            }
+
+            .category-icon {
+                font-size: 25px;
+            }
+
+            .category p {
+                font-size: 11px;
+            }
+
+            .deals,
+            .shops {
+                grid-template-columns: 1fr;
+            }
+
+            .deals-page-grid,
+            .explore-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .services {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .explore-page,
+            .deals-page {
+                padding: 12px;
+            }
+        }
+
+        /* ===== GRROX 4-COLUMN + ACCOUNT SYSTEM ===== */
+        .deals,
+        .shops,
+        .deals-page-grid,
+        .explore-grid {
+            grid-template-columns: repeat(4, minmax(0, 1fr)) !important
+        }
+
+        .auth-page {
+            display: none;
+            min-height: calc(100vh - 100px);
+            background: linear-gradient(135deg, #f5f7ff, #eef2ff);
+            padding: 30px 15px
+        }
+
+        .auth-wrap {
+            max-width: 1050px;
+            margin: auto
+        }
+
+        .auth-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 18px
+        }
+
+        .auth-back {
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 9px 14px;
+            border-radius: 8px;
+            font-weight: 700
+        }
+
+        .auth-card {
+            background: #fff;
+            border: 1px solid #e2e6f0;
+            border-radius: 18px;
+            padding: 28px;
+            box-shadow: 0 12px 35px rgba(31, 50, 110, .10)
+        }
+
+        .auth-card h1 {
+            font-size: 30px;
+            margin-bottom: 8px
+        }
+
+        .auth-sub {
+            color: #687080;
+            margin-bottom: 22px
+        }
+
+        .role-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px
+        }
+
+        .role-card {
+            border: 1px solid #e0e5f0;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: left;
+            background: #fff;
+            transition: .2s
+        }
+
+        .role-card:hover {
+            border-color: #315bea;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 22px rgba(49, 91, 234, .10)
+        }
+
+        .role-card .role-icon {
+            font-size: 45px;
+            margin-bottom: 12px
+        }
+
+        .role-card h3 {
+            margin-bottom: 7px
+        }
+
+        .role-card p {
+            color: #697386;
+            line-height: 1.5;
+            margin-bottom: 15px
+        }
+
+        .auth-primary {
+            width: 100%;
+            background: linear-gradient(135deg, #315bea, #5146c8);
+            color: #fff;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: 800
+        }
+
+        .auth-step {
+            display: none
+        }
+
+        .auth-step.active {
+            display: block
+        }
+
+        .auth-form {
+            display: grid;
+            gap: 13px
+        }
+
+        .auth-form label {
+            font-size: 13px;
+            font-weight: 800;
+            color: #374151
+        }
+
+        .auth-form input,
+        .auth-form select,
+        .auth-form textarea {
+            width: 100%;
+            border: 1px solid #d8deea;
+            border-radius: 8px;
+            padding: 11px 12px;
+            outline: none;
+            background: #fff
+        }
+
+        .auth-form textarea {
+            min-height: 85px;
+            resize: vertical
+        }
+
+        .auth-form input:focus,
+        .auth-form select:focus,
+        .auth-form textarea:focus {
+            border-color: #315bea
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 13px
+        }
+
+        .full {
+            grid-column: 1/-1
+        }
+
+        .otp-note {
+            background: #eef4ff;
+            color: #315bea;
+            padding: 11px;
+            border-radius: 8px;
+            font-size: 13px;
+            margin-bottom: 14px
+        }
+
+        .auth-link {
+            background: none;
+            color: #315bea;
+            font-weight: 800;
+            margin-top: 12px
+        }
+
+        .profile-dashboard {
+            display: none
+        }
+
+        .dashboard-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 18px
+        }
+
+        .dashboard-head h2 {
+            margin: 0
+        }
+
+        .logout-btn {
+            background: #f1f3f6;
+            padding: 9px 14px;
+            border-radius: 8px;
+            font-weight: 800
+        }
+
+        .dash-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px
+        }
+
+        .dash-box {
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 18px;
+            background: #fff
+        }
+
+        .dash-box h3 {
+            margin: 8px 0
+        }
+
+        .dash-box p {
+            color: #687080;
+            font-size: 14px;
+            line-height: 1.5
+        }
+
+        .dash-icon {
+            font-size: 30px
+        }
+
+        .data-list {
+            margin-top: 8px;
+            color: #4b5563;
+            font-size: 14px;
+            line-height: 1.7
+        }
+
+        .business-extra {
+            display: none
+        }
+
+        .account-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            background: #eef4ff;
+            color: #315bea;
+            padding: 7px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 800
+        }
+
+        @media(max-width:1100px) {
+
+            .deals,
+            .shops,
+            .deals-page-grid,
+            .explore-grid {
+                grid-template-columns: repeat(4, minmax(0, 1fr)) !important
+            }
+
+            .services {
+                grid-template-columns: repeat(3, 1fr)
+            }
+        }
+
+        @media(max-width:850px) {
+
+            .deals,
+            .shops,
+            .deals-page-grid,
+            .explore-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr)) !important
+            }
+
+            .role-grid,
+            .form-grid,
+            .dash-grid {
+                grid-template-columns: 1fr
+            }
+
+            .full {
+                grid-column: auto
+            }
+        }
+
+        @media(max-width:500px) {
+
+            .deals,
+            .shops,
+            .deals-page-grid,
+            .explore-grid {
+                grid-template-columns: 1fr !important
+            }
+
+            .auth-page {
+                padding: 15px 10px
+            }
+
+            .auth-card {
+                padding: 20px
+            }
+
+            .auth-card h1 {
+                font-size: 25px
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <div class="top-header">
+
+        <div class="logo">
+            GRR<span>OX</span>
+        </div>
+
+        <div class="city">
+            📍 Jaipur
+        </div>
+
+        <div class="search-box">
+            <input id="searchInput" type="text" placeholder="Search shops, deals, services...">
+            <button onclick="searchSite()">🔍</button>
+        </div>
+
+        <button class="header-btn">
+            🔔
+        </button>
+
+        <button class="header-btn" onclick="showAuth()">
+            👤 Profile
+        </button>
+
+    </div>
+
+    <nav class="nav">
+        <div class="nav-inner">
+
+            <button onclick="showHome()">All Categories</button>
+            <button onclick="showDealsPage()">Deals</button>
+            <button onclick="scrollToSection('categoriesSection')">Explore</button>
+            <button onclick="scrollToSection('shopsSection')">Shops</button>
+            <button onclick="scrollToSection('servicesSection')">Services</button>
+            <button onclick="showNewOffers()">New Offers</button>
+            <button onclick="showPopular()">Popular Near You</button>
+
+        </div>
+    </nav>
+
+    </header>
+
+
+
+    <!-- DEDICATED DEALS PAGE -->
+    <main class="container deals-page" id="dealsPage">
+
+        <div class="deals-page-head">
+            <h1>🔥 Deals in Jaipur</h1>
+            <p>Discover offers and discounts from local Jaipur businesses.</p>
+            <button class="back-home" onclick="showHomePage()">← Back to Home</button>
+        </div>
+
+        <div class="deal-toolbar">
+            <input class="deal-search" id="dealPageSearch" type="text"
+                placeholder="Search deals, shops or categories..." oninput="searchDealsPage()">
+
+            <button class="deal-filter active" onclick="filterDealsPage('All', this)">All Deals</button>
+            <button class="deal-filter" onclick="filterDealsPage('Clothing', this)">Clothing</button>
+            <button class="deal-filter" onclick="filterDealsPage('Grocery', this)">Grocery</button>
+            <button class="deal-filter" onclick="filterDealsPage('Electronics', this)">Electronics</button>
+            <button class="deal-filter" onclick="filterDealsPage('Stationery', this)">Stationery</button>
+            <button class="deal-filter" onclick="filterDealsPage('Electrical', this)">Electrical</button>
+            <button class="deal-filter" onclick="filterDealsPage('Food', this)">Food</button>
+            <button class="deal-filter" onclick="filterDealsPage('Salon', this)">Salon</button>
+            <button class="deal-filter" onclick="filterDealsPage('Furniture', this)">Furniture</button>
+        </div>
+
+        <div class="deals-page-grid" id="dealsPageContainer"></div>
+
+    </main>
+
+
+    <section class="explore-page" id="explorePage">
+        <div class="explore-head">
+            <h1>🔎 Explore Jaipur</h1>
+            <p>Discover local shops, businesses and places around Jaipur.</p>
+            <div class="explore-tools"><input class="explore-search" id="exploreSearch"
+                    placeholder="Search shops, categories..." oninput="searchExplore()"></div>
+            <button class="back-home" onclick="showHomePage()">← Back to Home</button>
+        </div>
+        <div class="explore-filters" id="exploreFilters"></div>
+        <div class="explore-grid" id="exploreContainer"></div>
+    </section>
+
+    <main class="container">
+
+        <!-- HERO -->
+        <section class="hero">
+
+            <div class="hero-text">
+
+                <h1>Everything Local.<br>All in One Place.</h1>
+
+                <p>
+                    Discover local shops, amazing deals and trusted
+                    services around Jaipur.
+                </p>
+
+                <button onclick="showDealsPage()">
+                    Explore Deals
+                </button>
+
+            </div>
+
+            <div class="hero-icon">
+                🛍️
+            </div>
+
+        </section>
+
+
+        <!-- CATEGORIES -->
+        <section class="section" id="categoriesSection">
+
+            <div class="section-head">
+                <h2>Shop by Category</h2>
+                <button class="view-all" onclick="showAllCategories()">
+                    View All
+                </button>
+            </div>
+
+            <div class="categories">
+
+                <button class="category" onclick="filterDeals('Clothing')">
+                    <div class="category-icon">👕</div>
+                    <p>Clothing</p>
+                </button>
+
+                <button class="category" onclick="filterDeals('Grocery')">
+                    <div class="category-icon">🛒</div>
+                    <p>Grocery</p>
+                </button>
+
+                <button class="category" onclick="filterDeals('Electronics')">
+                    <div class="category-icon">📱</div>
+                    <p>Electronics</p>
+                </button>
+
+                <button class="category" onclick="filterDeals('Stationery')">
+                    <div class="category-icon">📚</div>
+                    <p>Stationery</p>
+                </button>
+
+                <button class="category" onclick="filterDeals('Electrical')">
+                    <div class="category-icon">💡</div>
+                    <p>Electrical</p>
+                </button>
+
+                <button class="category" onclick="filterDeals('Food')">
+                    <div class="category-icon">🍔</div>
+                    <p>Food</p>
+                </button>
+
+                <button class="category" onclick="filterDeals('Salon')">
+                    <div class="category-icon">💇</div>
+                    <p>Salon</p>
+                </button>
+
+                <button class="category" onclick="filterDeals('Furniture')">
+                    <div class="category-icon">🛋️</div>
+                    <p>Furniture</p>
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- DEALS -->
+        <section class="section" id="dealsSection">
+
+            <div class="section-head">
+                <h2 id="dealTitle">🔥 Deals Near You</h2>
+                <button class="view-all" onclick="resetDeals()">View All</button>
+            </div>
+
+            <div class="deals" id="dealContainer"></div>
+
+        </section>
+
+
+        <!-- SHOPS -->
+        <section class="section" id="shopsSection">
+
+            <div class="section-head">
+                <h2>🏪 Popular Shops</h2>
+                <button class="view-all" onclick="showAllShops()">
+                    View All
+                </button>
+            </div>
+
+            <div class="shops" id="shopContainer"></div>
+
+        </section>
+
+
+        <!-- SERVICES -->
+        <section class="section" id="servicesSection">
+
+            <div class="section-head">
+                <h2>🛠️ Local Services</h2>
+            </div>
+
+            <div class="services">
+
+                <button class="service" onclick="serviceInfo('Electrician')">
+                    <div class="service-icon">⚡</div>
+                    <b>Electrician</b>
+                </button>
+
+                <button class="service" onclick="serviceInfo('Plumber')">
+                    <div class="service-icon">🔧</div>
+                    <b>Plumber</b>
+                </button>
+
+                <button class="service" onclick="serviceInfo('Mechanic')">
+                    <div class="service-icon">🔩</div>
+                    <b>Mechanic</b>
+                </button>
+
+                <button class="service" onclick="serviceInfo('Computer Repair')">
+                    <div class="service-icon">💻</div>
+                    <b>Computer Repair</b>
+                </button>
+
+                <button class="service" onclick="serviceInfo('Tutor')">
+                    <div class="service-icon">👨‍🏫</div>
+                    <b>Tutor</b>
+                </button>
+
+                <button class="service" onclick="serviceInfo('AC Repair')">
+                    <div class="service-icon">❄️</div>
+                    <b>AC Repair</b>
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- FOR BUSINESSES PAGE -->
+    <section id="businessPage" class="business-page" style="display:none;">
+        <div class="business-wrap">
+            <button class="back-btn" onclick="showHome()">← Back to Home</button>
+
+            <div class="business-hero">
+                <div>
+                    <span class="business-kicker">FOR LOCAL BUSINESSES</span>
+                    <h1>Grow Your Business with GRROX</h1>
+                    <p>Show your shop, publish offers and connect with customers across Jaipur.</p>
+                    <button class="primary-business-btn" onclick="businessAction('List Your Business')">
+                        List Your Business
+                    </button>
+                </div>
+                <div class="business-hero-icon">🏪</div>
+            </div>
+
+            <h2 class="business-title">What you can do on GRROX</h2>
+
+            <div class="business-features">
+                <div class="business-feature">
+                    <div>🏬</div>
+                    <h3>List Your Business</h3>
+                    <p>Create a business profile with your category, location and contact details.</p>
+                    <button onclick="businessAction('List Your Business')">Get Started</button>
+                </div>
+
+                <div class="business-feature">
+                    <div>🔥</div>
+                    <h3>Post an Offer</h3>
+                    <p>Publish discounts and deals so local customers can discover them.</p>
+                    <button onclick="businessAction('Post an Offer')">Post Offer</button>
+                </div>
+
+                <div class="business-feature">
+                    <div>📢</div>
+                    <h3>Promote Your Business</h3>
+                    <p>Featured placements can help your business get more visibility.</p>
+                    <button onclick="businessAction('Promote Your Business')">Promote</button>
+                </div>
+            </div>
+
+            <div class="business-steps">
+                <h2>How GRROX works for businesses</h2>
+                <div class="steps-grid">
+                    <div><span>1</span>
+                        <h3>Create Profile</h3>
+                        <p>Add your business details.</p>
+                    </div>
+                    <div><span>2</span>
+                        <h3>Add Offers</h3>
+                        <p>Publish your latest deals.</p>
+                    </div>
+                    <div><span>3</span>
+                        <h3>Reach Customers</h3>
+                        <p>Get discovered by Jaipur users.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- ACCOUNT / LOGIN SYSTEM -->
+    <section id="authPage" class="auth-page">
+        <div class="auth-wrap">
+            <div class="auth-top"><span class="account-badge">GRROX ACCOUNT</span><button class="auth-back"
+                    onclick="closeAuth()">← Back</button></div>
+            <div class="auth-card">
+                <div id="roleStep" class="auth-step active">
+                    <h1>Welcome to GRROX</h1>
+                    <p class="auth-sub">Continue as a customer or local business owner.</p>
+                    <div class="role-grid">
+                        <button class="role-card" onclick="selectRole('customer')">
+                            <div class="role-icon">🛍️</div>
+                            <h3>I'm a Customer</h3>
+                            <p>Discover deals, shops and services, save your preferences and manage requests.</p><span
+                                class="auth-primary" style="display:block;text-align:center">Continue as Customer</span>
+                        </button>
+                        <button class="role-card" onclick="selectRole('business')">
+                            <div class="role-icon">🏪</div>
+                            <h3>I'm a Business Owner</h3>
+                            <p>Create your business profile, products/services, offers and contact information.</p><span
+                                class="auth-primary" style="display:block;text-align:center">Continue as Business</span>
+                        </button>
+                    </div>
+                </div>
+                <div id="phoneStep" class="auth-step">
+                    <h1>Mobile Login</h1>
+                    <p class="auth-sub">Enter your mobile number to continue.</p>
+                    <div class="auth-form"><label>Mobile Number</label><input id="loginPhone" type="tel" maxlength="10"
+                            placeholder="10-digit mobile number"><button class="auth-primary"
+                            onclick="sendDemoOtp()">Send OTP</button></div>
+                    <button class="auth-link" onclick="backToRole()">← Change account type</button>
+                </div>
+                <div id="otpStep" class="auth-step">
+                    <h1>Verify Mobile</h1>
+                    <div class="otp-note">Demo mode: OTP is <b>123456</b>. Real SMS OTP will be connected in backend.
+                    </div>
+                    <div class="auth-form"><label>Enter OTP</label><input id="loginOtp" inputmode="numeric"
+                            maxlength="6" placeholder="6-digit OTP"><button class="auth-primary"
+                            onclick="verifyDemoOtp()">Verify & Continue</button></div>
+                    <button class="auth-link" onclick="showAuthStep('phoneStep')">← Change number</button>
+                </div>
+                <div id="customerProfileStep" class="auth-step">
+                    <h1>Customer Profile</h1>
+                    <p class="auth-sub">Fill this once. Your data is saved locally for the prototype.</p>
+                    <div class="auth-form">
+                        <div class="form-grid">
+                            <div><label>Full Name</label><input id="cName" placeholder="Your name"></div>
+                            <div><label>Email (optional)</label><input id="cEmail" type="email"
+                                    placeholder="you@example.com"></div>
+                            <div><label>Area / Locality</label><input id="cArea" placeholder="e.g. Mansarovar"></div>
+                            <div><label>City</label><input id="cCity" value="Jaipur"></div>
+                            <div class="full"><label>Address</label><textarea id="cAddress"
+                                    placeholder="House / street / landmark"></textarea></div>
+                            <div class="full"><label>Interested Categories</label><select id="cCategory">
+                                    <option>All Categories</option>
+                                    <option>Clothing</option>
+                                    <option>Grocery</option>
+                                    <option>Electronics</option>
+                                    <option>Food</option>
+                                    <option>Salon</option>
+                                    <option>Services</option>
+                                </select></div>
+                        </div><button class="auth-primary" onclick="saveCustomerProfile()">Save Customer
+                            Profile</button>
+                    </div>
+                </div>
+                <div id="businessProfileStep" class="auth-step">
+                    <h1>Business Setup</h1>
+                    <p class="auth-sub">Add the details customers will see on GRROX.</p>
+                    <div class="auth-form">
+                        <div class="form-grid">
+                            <div><label>Owner Name</label><input id="bOwner" placeholder="Owner name"></div>
+                            <div><label>Business Name</label><input id="bName" placeholder="Shop / business name"></div>
+                            <div><label>Business Category</label><select id="bCategory">
+                                    <option>Clothing</option>
+                                    <option>Grocery</option>
+                                    <option>Electronics</option>
+                                    <option>Stationery</option>
+                                    <option>Electrical</option>
+                                    <option>Food</option>
+                                    <option>Salon</option>
+                                    <option>Furniture</option>
+                                    <option>Services</option>
+                                    <option>Other</option>
+                                </select></div>
+                            <div><label>Business Type</label><select id="bType">
+                                    <option>Retail Shop</option>
+                                    <option>Service Provider</option>
+                                    <option>Restaurant / Food</option>
+                                    <option>Online Business</option>
+                                    <option>Other</option>
+                                </select></div>
+                            <div><label>Area / Locality</label><input id="bArea" placeholder="e.g. Vaishali Nagar">
+                            </div>
+                            <div><label>PIN Code</label><input id="bPin" maxlength="6" placeholder="3020XX"></div>
+                            <div class="full"><label>Business Address</label><textarea id="bAddress"
+                                    placeholder="Full business address"></textarea></div>
+                            <div><label>WhatsApp / Contact</label><input id="bWhatsapp" type="tel" maxlength="10"
+                                    placeholder="10-digit number"></div>
+                            <div><label>Opening Hours</label><input id="bHours" placeholder="10 AM - 9 PM"></div>
+                            <div class="full"><label>Business Description</label><textarea id="bDesc"
+                                    placeholder="Tell customers what you sell or provide"></textarea></div>
+                            <div><label>Products / Services</label><input id="bProducts"
+                                    placeholder="e.g. Mobiles, accessories"></div>
+                            <div><label>Website / Instagram (optional)</label><input id="bSocial"
+                                    placeholder="Link or @username"></div>
+                        </div><button class="auth-primary" onclick="saveBusinessProfile()">Create Business
+                            Profile</button>
+                    </div>
+                </div>
+                <div id="profileDashboard" class="profile-dashboard">
+                    <div class="dashboard-head">
+                        <div><span id="dashRole" class="account-badge"></span>
+                            <h2 id="dashName" style="margin-top:8px"></h2>
+                        </div><button class="logout-btn" onclick="logoutAccount()">Logout</button>
+                    </div>
+                    <div id="customerDash" class="dash-grid">
+                        <div class="dash-box">
+                            <div class="dash-icon">❤️</div>
+                            <h3>Saved Deals</h3>
+                            <p>Your favourite deals can appear here.</p>
+                        </div>
+                        <div class="dash-box">
+                            <div class="dash-icon">🏪</div>
+                            <h3>Saved Businesses</h3>
+                            <p>Keep local shops you want to revisit.</p>
+                        </div>
+                        <div class="dash-box">
+                            <div class="dash-icon">🛠️</div>
+                            <h3>Service Requests</h3>
+                            <p>Future bookings and service requests will appear here.</p>
+                        </div>
+                    </div>
+                    <div id="businessDash" class="dash-grid" style="display:none">
+                        <div class="dash-box">
+                            <div class="dash-icon">🏬</div>
+                            <h3>Business Profile</h3>
+                            <div id="businessData" class="data-list"></div>
+                        </div>
+                        <div class="dash-box">
+                            <div class="dash-icon">🔥</div>
+                            <h3>Manage Offers</h3>
+                            <p>Add discounts and deals from your business dashboard.</p><button class="auth-primary"
+                                onclick="businessDashboardAction('Offer')">Add Offer</button>
+                        </div>
+                        <div class="dash-box">
+                            <div class="dash-icon">📦</div>
+                            <h3>Products / Services</h3>
+                            <p>Add the items or services customers can discover.</p><button class="auth-primary"
+                                onclick="businessDashboardAction('Product')">Add Product / Service</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <div class="footer-inner">
+
+            <div>
+                <h2>GRROX</h2>
+                <p>Everything Local. All in One Place.</p>
+                <p>Discover Jaipur locally.</p>
+            </div>
+
+            <div>
+                <h3>GRROX</h3>
+                <p>About Us</p>
+                <p>Contact</p>
+                <p>Help</p>
+            </div>
+
+            <div>
+                <h3>For Businesses</h3>
+                <p onclick="showBusinessPage()" style="cursor:pointer">List Your Business</p>
+                <p onclick="showBusinessPage()" style="cursor:pointer">Post an Offer</p>
+                <p onclick="showBusinessPage()" style="cursor:pointer">Promote Your Business</p>
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- MODAL -->
+    <div class="modal" id="modal">
+
+        <div class="modal-box">
+
+            <button class="close" onclick="closeModal()">×</button>
+
+            <div class="modal-icon" id="modalIcon">🛍️</div>
+
+            <h2 id="modalTitle">Title</h2>
+
+            <p id="modalText">
+                Information
+            </p>
+
+            <button class="modal-action" onclick="modalAction()">
+                Continue
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- MOBILE NAV -->
+    <div class="bottom-nav">
+
+        <button onclick="showDealsPage()">
+            <span>🔥</span>
+            Deals
+        </button>
+
+        <button onclick="showExplorePage()">
+            <span>🔎</span>
+            Explore
+        </button>
+
+        <button onclick="showHome()">
+            <span>🏠</span>
+            Home
+        </button>
+
+        <button onclick="scrollToSection('servicesSection')">
+            <span>🛠️</span>
+            Services
+        </button>
+
+        <button onclick="showAuth()">
+            <span>👤</span>
+            Profile
+        </button>
+
+    </div>
+
+
+    <script>
+
+        /* DEMO DEAL DATA */
+
+        const deals = [
+
+            {
+                title: "Fashion Collection",
+                shop: "Local Fashion Store",
+                category: "Clothing",
+                offer: "30% OFF",
+                icon: "👕",
+                description: "Get up to 30% OFF on selected clothing items."
+            },
+
+            {
+                title: "Grocery Combo",
+                shop: "Jaipur Grocery Mart",
+                category: "Grocery",
+                offer: "20% OFF",
+                icon: "🛒",
+                description: "Save money on selected grocery combo packs."
+            },
+
+            {
+                title: "Mobile Accessories",
+                shop: "Mobile Hub",
+                category: "Electronics",
+                offer: "25% OFF",
+                icon: "📱",
+                description: "Special discount on mobile accessories."
+            },
+
+            {
+                title: "Student Combo",
+                shop: "City Stationery",
+                category: "Stationery",
+                offer: "15% OFF",
+                icon: "📚",
+                description: "Special stationery combo for students."
+            },
+
+            {
+                title: "LED Lights",
+                shop: "Jaipur Electricals",
+                category: "Electrical",
+                offer: "20% OFF",
+                icon: "💡",
+                description: "Discount on selected LED lighting products."
+            },
+
+            {
+                title: "Food Combo",
+                shop: "Local Food Corner",
+                category: "Food",
+                offer: "25% OFF",
+                icon: "🍔",
+                description: "Special food combo offer."
+            },
+
+            {
+                title: "Salon Package",
+                shop: "Style Salon",
+                category: "Salon",
+                offer: "30% OFF",
+                icon: "💇",
+                description: "Special discount on selected salon services."
+            },
+
+            {
+                title: "Home Furniture",
+                shop: "Jaipur Furniture House",
+                category: "Furniture",
+                offer: "20% OFF",
+                icon: "🛋️",
+                description: "Special offers on selected furniture."
+            }
+
+        ];
+
+
+        /* DEMO SHOPS */
+
+        const shops = [
+
+            {
+                name: "Local Fashion Store",
+                category: "Clothing",
+                icon: "👕",
+                location: "Jaipur"
+            },
+
+            {
+                name: "Mobile Hub",
+                category: "Electronics",
+                icon: "📱",
+                location: "Jaipur"
+            },
+
+            {
+                name: "Jaipur Grocery Mart",
+                category: "Grocery",
+                icon: "🛒",
+                location: "Jaipur"
+            },
+
+            {
+                name: "City Stationery",
+                category: "Stationery",
+                icon: "📚",
+                location: "Jaipur"
+            }
+
+        ];
+
+
+
+        /* DEDICATED DEALS PAGE */
+
+        let currentDealPageCategory = "All";
+
+        function showDealsPage() {
+            document.querySelector("main.container:not(.deals-page)").style.display = "none";
+            document.getElementById("dealsPage").style.display = "block";
+            renderDealsPage();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+
+        function showHomePage() {
+            document.getElementById("dealsPage").style.display = "none";
+            document.querySelector("main.container:not(.deals-page)").style.display = "block";
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+
+        function renderDealsPage() {
+            const container = document.getElementById("dealsPageContainer");
+            const query = document.getElementById("dealPageSearch").value.toLowerCase().trim();
+
+            let filtered = deals.filter(deal => {
+                const categoryMatch =
+                    currentDealPageCategory === "All" ||
+                    deal.category === currentDealPageCategory;
+
+                const searchMatch =
+                    !query ||
+                    deal.title.toLowerCase().includes(query) ||
+                    deal.shop.toLowerCase().includes(query) ||
+                    deal.category.toLowerCase().includes(query) ||
+                    deal.offer.toLowerCase().includes(query);
+
+                return categoryMatch && searchMatch;
+            });
+
+            if (!filtered.length) {
+                container.innerHTML = `
+                    <div class="empty-deals">
+                        <h2>No deals found</h2>
+                        <p style="margin-top:8px;color:#777;">
+                            Try another category or search term.
+                        </p>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = filtered.map((deal) => {
+                const originalIndex = deals.indexOf(deal);
+
+                return `
+                    <div class="deal-page-card">
+                        <div class="deal-page-img">${deal.icon}</div>
+
+                        <div class="deal-page-content">
+                            <div class="deal-meta">
+                                <span class="badge">${deal.offer}</span>
+                                <span class="deal-category-label">${deal.category}</span>
+                            </div>
+
+                            <h3>${deal.title}</h3>
+
+                            <p>
+                                <b>${deal.shop}</b><br>
+                                📍 Jaipur<br><br>
+                                ${deal.description}
+                            </p>
+
+                            <button class="deal-page-btn"
+                                onclick="openDeal(${originalIndex})">
+                                View Deal
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }).join("");
+        }
+
+        function filterDealsPage(category, button) {
+            currentDealPageCategory = category;
+
+            document.querySelectorAll(".deal-filter").forEach(btn => {
+                btn.classList.remove("active");
+            });
+
+            if (button) {
+                button.classList.add("active");
+            }
+
+            renderDealsPage();
+        }
+
+        function searchDealsPage() {
+            renderDealsPage();
+        }
+
+        /* SHOW DEALS */
+
+        function displayDeals(list = deals) {
+
+            const container = document.getElementById("dealContainer");
+
+            container.innerHTML = "";
+
+            if (list.length === 0) {
+
+                container.innerHTML = `
+            <div style="background:white;padding:30px;border-radius:10px;grid-column:1/-1;text-align:center">
+                <h3>No deals found</h3>
+                <p style="margin-top:8px;color:#777">
+                    Try another search or category.
+                </p>
+            </div>
+        `;
+
+                return;
+            }
+
+            list.forEach((deal, index) => {
+
+                container.innerHTML += `
+
+            <div class="card">
+
+                <div class="card-img">
+                    ${deal.icon}
+                </div>
+
+                <div class="card-content">
+
+                    <span class="badge">
+                        ${deal.offer}
+                    </span>
+
+                    <h3>${deal.title}</h3>
+
+                    <p>
+                        ${deal.shop}<br>
+                        📍 Jaipur
+                    </p>
+
+                    <button onclick="openDeal(${index})">
+                        View Deal
+                    </button>
+
+                </div>
+
+            </div>
+
+        `;
+
+            });
+
+        }
+
+
+        /* SHOW SHOPS */
+
+        function displayShops(list = shops) {
+
+            const container = document.getElementById("shopContainer");
+
+            container.innerHTML = "";
+
+            list.forEach((shop, index) => {
+
+                container.innerHTML += `
+
+            <div class="shop">
+
+                <div class="shop-icon">
+                    ${shop.icon}
+                </div>
+
+                <h3>${shop.name}</h3>
+
+                <p>
+                    ${shop.category}<br>
+                    📍 ${shop.location}
+                </p>
+
+                <button onclick="openShop(${index})">
+                    View Shop
+                </button>
+
+            </div>
+
+        `;
+
+            });
+
+        }
+
+
+        /* FILTER */
+
+        function filterDeals(category) {
+
+            const filtered = deals.filter(
+                deal => deal.category === category
+            );
+
+            document.getElementById("dealTitle").innerText =
+                "🔥 " + category + " Deals";
+
+            displayDeals(filtered);
+
+            scrollToSection("dealsSection");
+        }
+
+
+        /* RESET */
+
+        function resetDeals() {
+
+            document.getElementById("dealTitle").innerText =
+                "🔥 Deals Near You";
+
+            displayDeals(deals);
+
+        }
+
+
+        /* SEARCH */
+
+        function searchSite() {
+
+            const query =
+                document.getElementById("searchInput").value
+                    .toLowerCase()
+                    .trim();
+
+            if (!query) {
+
+                resetDeals();
+                return;
+
+            }
+
+            const filtered = deals.filter(deal =>
+
+                deal.title.toLowerCase().includes(query) ||
+                deal.shop.toLowerCase().includes(query) ||
+                deal.category.toLowerCase().includes(query)
+
+            );
+
+            document.getElementById("dealTitle").innerText =
+                "🔎 Search Results";
+
+            displayDeals(filtered);
+
+            scrollToSection("dealsSection");
+        }
+
+
+        /* ENTER KEY SEARCH */
+
+        document.getElementById("searchInput")
+            .addEventListener("keydown", function (event) {
+
+                if (event.key === "Enter") {
+                    searchSite();
+                }
+
+            });
+
+
+        /* DEAL MODAL */
+
+        function openDeal(index) {
+
+            const deal = deals[index];
+
+            document.getElementById("modalIcon").innerText =
+                deal.icon;
+
+            document.getElementById("modalTitle").innerText =
+                deal.title;
+
+            document.getElementById("modalText").innerHTML =
+                `<b>${deal.offer}</b><br><br>
+        Shop: ${deal.shop}<br>
+        Category: ${deal.category}<br>
+        Location: Jaipur<br><br>
+        ${deal.description}`;
+
+            document.getElementById("modal").style.display = "flex";
+
+        }
+
+
+        /* SHOP MODAL */
+
+        function openShop(index) {
+
+            const shop = shops[index];
+
+            document.getElementById("modalIcon").innerText =
+                shop.icon;
+
+            document.getElementById("modalTitle").innerText =
+                shop.name;
+
+            document.getElementById("modalText").innerHTML =
+                `<b>${shop.category}</b><br><br>
+        📍 ${shop.location}<br><br>
+        This is a demo shop profile. Real business information
+        will come from the GRROX backend later.`;
+
+            document.getElementById("modal").style.display = "flex";
+
+        }
+
+
+        /* SERVICES */
+
+        function serviceInfo(service) {
+
+            document.getElementById("modalIcon").innerText = "🛠️";
+
+            document.getElementById("modalTitle").innerText =
+                service;
+
+            document.getElementById("modalText").innerHTML =
+                `Find ${service} professionals near you in Jaipur.<br><br>
+        Service booking will be connected to the GRROX backend
+        in the next development phase.`;
+
+            document.getElementById("modal").style.display = "flex";
+
+        }
+
+
+        /* PROFILE */
+
+        function openProfile() {
+
+            document.getElementById("modalIcon").innerText = "👤";
+
+            document.getElementById("modalTitle").innerText =
+                "GRROX Profile";
+
+            document.getElementById("modalText").innerHTML =
+                `Your GRROX account will allow you to save deals,
+        contact businesses and manage your service requests.`;
+
+            document.getElementById("modal").style.display = "flex";
+
+        }
+
+
+
+        /* EXPLORE PAGE */
+        const exploreData = [
+            { name: 'Local Fashion Store', category: 'Clothing', icon: '👕', location: 'Vaishali Nagar', desc: 'Fashion, casual wear and everyday clothing.' },
+            { name: 'Jaipur Grocery Mart', category: 'Grocery', icon: '🛒', location: 'Mansarovar', desc: 'Daily groceries, household and essentials.' },
+            { name: 'Mobile Hub Jaipur', category: 'Electronics', icon: '📱', location: 'MI Road', desc: 'Mobiles, accessories and electronics.' },
+            { name: 'City Stationery', category: 'Stationery', icon: '📚', location: 'C-Scheme', desc: 'School, college and office stationery.' },
+            { name: 'Sharma Electricals', category: 'Electrical', icon: '💡', location: 'Tonk Road', desc: 'Electrical items, switches and home supplies.' },
+            { name: 'Royal Food Corner', category: 'Food', icon: '🍔', location: 'Malviya Nagar', desc: 'Local food, snacks and quick bites.' },
+            { name: 'Style Salon Jaipur', category: 'Salon', icon: '💇', location: 'Raja Park', desc: 'Salon and grooming services.' },
+            { name: 'Jaipur Furniture House', category: 'Furniture', icon: '🛋️', location: 'Sanganer', desc: 'Home furniture and furnishing products.' }
+        ];
+        const exploreCategories = ['All', 'Clothing', 'Grocery', 'Electronics', 'Stationery', 'Electrical', 'Food', 'Salon', 'Furniture'];
+        function showExplorePage() { document.querySelector('main.container').style.display = 'none'; document.getElementById('dealsPage').style.display = 'none'; document.getElementById('explorePage').style.display = 'block'; renderExploreFilters(); renderExplore(); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+        function renderExploreFilters(active = 'All') { const box = document.getElementById('exploreFilters'); box.innerHTML = exploreCategories.map(c => `<button class="explore-filter ${c === active ? 'active' : ''}" onclick="filterExplore('${c}')">${c}</button>`).join(''); }
+        let exploreActive = 'All';
+        function filterExplore(c) { exploreActive = c; renderExploreFilters(c); renderExplore(); }
+        function renderExplore() { const q = (document.getElementById('exploreSearch')?.value || '').toLowerCase().trim(); let list = exploreData.filter(x => (exploreActive === 'All' || x.category === exploreActive) && (!q || x.name.toLowerCase().includes(q) || x.category.toLowerCase().includes(q) || x.location.toLowerCase().includes(q))); const box = document.getElementById('exploreContainer'); if (!list.length) { box.innerHTML = '<div style="background:#fff;padding:30px;border-radius:12px;grid-column:1/-1;text-align:center"><h3>No businesses found</h3><p style="color:#777;margin-top:8px">Try another search or category.</p></div>'; return } box.innerHTML = list.map((x, i) => `<div class="explore-card"><div class="explore-img">${x.icon}</div><div class="explore-content"><span class="explore-tag">${x.category}</span><h3>${x.name}</h3><p>📍 ${x.location}<br>${x.desc}</p><button class="explore-btn" onclick="openExploreShop(${exploreData.indexOf(x)})">View Business</button></div></div>`).join(''); }
+        function searchExplore() { renderExplore(); }
+        function openExploreShop(i) { const x = exploreData[i]; document.getElementById('modalIcon').innerText = x.icon; document.getElementById('modalTitle').innerText = x.name; document.getElementById('modalText').innerHTML = `<b>${x.category}</b><br><br>📍 ${x.location}<br><br>${x.desc}<br><br><small>This is demo business data. Real listings will be connected to the GRROX backend later.</small>`; document.getElementById('modal').style.display = 'flex'; }
+        function showHomePage() { document.querySelector('main.container').style.display = 'block'; document.getElementById('dealsPage').style.display = 'none'; document.getElementById('explorePage').style.display = 'none'; document.getElementById('businessPage').style.display = 'none'; document.getElementById('authPage').style.display = 'none'; document.querySelector('.footer').style.display = 'block'; window.scrollTo({ top: 0, behavior: 'smooth' }); }
+
+        /* OTHER BUTTONS */
+
+        function showAllCategories() {
+
+            scrollToSection("categoriesSection");
+
+        }
+
+        function showAllShops() {
+
+            scrollToSection("shopsSection");
+
+        }
+
+        function showNewOffers() {
+
+            showHomePage();
+            resetDeals();
+
+            document.getElementById("dealTitle").innerText =
+                "✨ New Offers";
+
+            scrollToSection("dealsSection");
+
+        }
+
+        function showPopular() {
+
+            showHomePage();
+            resetDeals();
+
+            document.getElementById("dealTitle").innerText =
+                "📍 Popular Near You";
+
+            scrollToSection("dealsSection");
+
+        }
+
+
+        /* HOME */
+
+        function showHome() {
+
+            showHomePage();
+
+        }
+
+
+        /* SCROLL */
+
+        function scrollToSection(id) {
+
+            const section = document.getElementById(id);
+
+            if (section) {
+
+                section.scrollIntoView({
+                    behavior: "smooth"
+                });
+
+            }
+
+        }
+
+
+        /* MODAL */
+
+        function closeModal() {
+
+            document.getElementById("modal").style.display = "none";
+
+        }
+
+        function modalAction() {
+
+            alert(
+                "This feature will be connected to the GRROX backend soon."
+            );
+
+        }
+
+
+        /* CLOSE MODAL OUTSIDE */
+
+        document.getElementById("modal")
+            .addEventListener("click", function (event) {
+
+                if (event.target === this) {
+                    closeModal();
+                }
+
+            });
+
+
+
+        /* BUSINESS PAGE */
+        function showBusinessPage() {
+            const home = document.querySelector("main.container:not(.deals-page)");
+            const dealsPage = document.querySelector(".deals-page");
+            const explorePage = document.getElementById("explorePage");
+            const businessPage = document.getElementById("businessPage");
+
+            if (home) home.style.display = "none";
+            if (dealsPage) dealsPage.style.display = "none";
+            if (explorePage) explorePage.style.display = "none";
+            if (businessPage) businessPage.style.display = "block";
+
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+
+        function businessAction(action) {
+            document.getElementById("modalIcon").innerText = "🏪";
+            document.getElementById("modalTitle").innerText = action;
+            document.getElementById("modalText").innerHTML =
+                `<b>${action}</b><br><br>
+        Business registration and offer management will be connected
+        to the GRROX backend in the next development phase.`;
+            document.getElementById("modal").style.display = "flex";
+        }
+
+        /* INITIAL LOAD */
+        renderExploreFilters();
+
+        document.getElementById("dealsPage").style.display = "none";
+        displayDeals();
+        displayShops();
+
+
+        /* ===== ACCOUNT SYSTEM ===== */
+        let authRole = localStorage.getItem('grroxRole') || '';
+        let authPhone = localStorage.getItem('grroxPhone') || '';
+        const DEMO_OTP = '123456';
+
+        function showAuth() {
+            document.querySelectorAll('main.container, #explorePage, #businessPage, .footer').forEach(x => x.style.display = 'none');
+            document.getElementById('authPage').style.display = 'block';
+            const saved = localStorage.getItem('grroxProfile');
+            if (saved) { showDashboard(JSON.parse(saved)); } else { showAuthStep('roleStep'); }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        function closeAuth() { document.getElementById('authPage').style.display = 'none'; document.querySelector('.footer').style.display = 'block'; showHomePage(); }
+        function showAuthStep(id) { document.querySelectorAll('.auth-step').forEach(x => x.classList.remove('active')); document.getElementById(id).classList.add('active'); }
+        function selectRole(role) { authRole = role; localStorage.setItem('grroxRole', role); showAuthStep('phoneStep'); }
+        function backToRole() { showAuthStep('roleStep'); }
+        function sendDemoOtp() {
+            const phone = document.getElementById('loginPhone').value.replace(/\D/g, '');
+            if (phone.length !== 10) { alert('Please enter a valid 10-digit mobile number.'); return; }
+            authPhone = phone; localStorage.setItem('grroxPhone', phone); showAuthStep('otpStep');
+        }
+        function verifyDemoOtp() {
+            if (document.getElementById('loginOtp').value.trim() !== DEMO_OTP) { alert('Demo OTP is 123456.'); return; }
+            const old = localStorage.getItem('grroxProfile');
+            if (old) { showDashboard(JSON.parse(old)); return; }
+            showAuthStep(authRole === 'business' ? 'businessProfileStep' : 'customerProfileStep');
+        }
+        function saveCustomerProfile() {
+            const name = document.getElementById('cName').value.trim(); if (!name) { alert('Please enter your name.'); return; }
+            const profile = { role: 'customer', phone: authPhone, name, email: document.getElementById('cEmail').value.trim(), area: document.getElementById('cArea').value.trim(), city: document.getElementById('cCity').value.trim(), address: document.getElementById('cAddress').value.trim(), category: document.getElementById('cCategory').value, createdAt: new Date().toISOString() };
+            localStorage.setItem('grroxProfile', JSON.stringify(profile)); showDashboard(profile);
+        }
+        function saveBusinessProfile() {
+            const owner = document.getElementById('bOwner').value.trim(), name = document.getElementById('bName').value.trim();
+            if (!owner || !name) { alert('Owner name and business name are required.'); return; }
+            const profile = { role: 'business', phone: authPhone, owner, businessName: name, category: document.getElementById('bCategory').value, type: document.getElementById('bType').value, area: document.getElementById('bArea').value.trim(), pin: document.getElementById('bPin').value.trim(), address: document.getElementById('bAddress').value.trim(), whatsapp: document.getElementById('bWhatsapp').value.trim(), hours: document.getElementById('bHours').value.trim(), description: document.getElementById('bDesc').value.trim(), products: document.getElementById('bProducts').value.trim(), social: document.getElementById('bSocial').value.trim(), offers: [], createdAt: new Date().toISOString() };
+            localStorage.setItem('grroxProfile', JSON.stringify(profile)); showDashboard(profile);
+        }
+        function showDashboard(profile) {
+            document.querySelectorAll('.auth-step').forEach(x => x.classList.remove('active')); document.getElementById('profileDashboard').style.display = 'block';
+            document.getElementById('dashRole').innerText = profile.role === 'business' ? '🏪 BUSINESS OWNER' : '🛍️ CUSTOMER';
+            document.getElementById('dashName').innerText = profile.role === 'business' ? profile.businessName : profile.name;
+            document.getElementById('customerDash').style.display = profile.role === 'customer' ? 'grid' : 'none';
+            document.getElementById('businessDash').style.display = profile.role === 'business' ? 'grid' : 'none';
+            if (profile.role === 'business') document.getElementById('businessData').innerHTML = `<b>Category:</b> ${profile.category}<br><b>Area:</b> ${profile.area || '-'}<br><b>Phone:</b> ${profile.phone}<br><b>Hours:</b> ${profile.hours || '-'}<br><b>Products:</b> ${profile.products || '-'}`;
+        }
+        function logoutAccount() { localStorage.removeItem('grroxProfile'); localStorage.removeItem('grroxRole'); localStorage.removeItem('grroxPhone'); authRole = ''; authPhone = ''; document.getElementById('profileDashboard').style.display = 'none'; showAuthStep('roleStep'); }
+        function businessDashboardAction(type) { alert(type + ' management screen is ready for backend/API connection.'); }
+
+    </script>
+
+</body>
+
+</html>
