@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <link rel="icon" href="data:,">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GRROX - Everything Local</title>
@@ -39,7 +40,7 @@
         }
 
         .top-header {
-            height: 40px;
+            height: 34px;
             display: flex;
             align-items: center;
             gap: 10px;
@@ -49,7 +50,7 @@
         }
 
         .logo {
-            font-size: 30px;
+            font-size: 26px;
             font-weight: 800;
             color: #111;
             letter-spacing: -1px;
@@ -62,8 +63,8 @@
         .search-box {
             flex: 1;
             display: flex;
-            max-width: 400px;
-            height: 18px;
+            max-width: 500px;
+            height: 34px;
         }
 
         .search-box input {
@@ -108,8 +109,8 @@
             max-width: 1400px;
             margin: auto;
             display: flex;
-            gap: 50px;
-            padding: 7px 50px;
+            gap: 35px;
+            padding: 7px 25px;
         }
 
         .nav button {
@@ -124,16 +125,16 @@
 
         /* MAIN */
         .container {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: auto;
             padding: 10px;
         }
 
         /* HERO */
         .hero {
-            min-height: 200px;
-            border-radius: 14px;
-            padding: 15px;
+            min-height: 160px;
+            border-radius: 10px;
+            padding: 20px 25px;
             background: linear-gradient(120deg, #2874f0, #6c63ff);
             color: white;
             display: flex;
@@ -147,32 +148,32 @@
         }
 
         .hero h1 {
-            font-size: 48px;
-            margin-bottom: 15px;
+            font-size: 32px;
+            margin-bottom: 10px;
         }
 
         .hero p {
-            font-size: 20px;
-            margin-bottom: 25px;
+            font-size: 14px;
+            margin-bottom: 15px;
             opacity: .95;
         }
 
         .hero button {
             background: white;
             color: #2874f0;
-            padding: 13px 24px;
-            border-radius: 7px;
+            padding: 9px 18px;
+            border-radius: 6px;
             font-weight: bold;
         }
 
         .hero-icon {
-            font-size: 150px;
+            font-size: 90px;
             opacity: .5;
         }
 
         /* SECTION */
         .section {
-            margin-top: 35px;
+            margin-top: 25px;
         }
 
         .section-head {
@@ -183,7 +184,7 @@
         }
 
         .section-head h2 {
-            font-size: 25px;
+            font-size: 20px;
         }
 
         .view-all {
@@ -196,13 +197,13 @@
         .categories {
             display: grid;
             grid-template-columns: repeat(8, 1fr);
-            gap: 15px;
+            gap: 10px;
         }
 
         .category {
             background: white;
-            border-radius: 10px;
-            padding: 20px 10px;
+            border-radius: 7px;
+            padding: 12px 8px;
             text-align: center;
             border: 1px solid #eee;
             transition: .2s;
@@ -214,73 +215,75 @@
         }
 
         .category-icon {
-            font-size: 38px;
+            font-size: 30px;
             margin-bottom: 10px;
         }
 
         .category p {
             font-weight: bold;
+            font-size: 13px;
         }
 
         /* DEALS */
         .deals {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
+            gap: 15px;
         }
 
         .card {
             background: white;
-            border-radius: 12px;
+            border-radius: 8px;
             overflow: hidden;
             border: 1px solid #eee;
             transition: .2s;
         }
 
         .card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 7px 20px rgba(0, 0, 0, .1);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, .08);
         }
 
         .card-img {
-            height: 160px;
+            height: 120px;
             background: #e9eef9;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 65px;
+            font-size: 55px;
         }
 
         .card-content {
-            padding: 17px;
+            padding: 12px;
         }
 
         .badge {
             display: inline-block;
             background: #e8f5e9;
             color: #188038;
-            padding: 5px 8px;
+            padding: 4px 7px;
             border-radius: 5px;
-            font-size: 12px;
+            font-size: 11px;
             font-weight: bold;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         .card h3 {
-            margin-bottom: 7px;
+            margin-bottom: 5px;
+            font-size: 15px;
         }
 
         .card p {
             color: #666;
-            font-size: 14px;
-            margin-bottom: 12px;
+            font-size: 12px;
+            margin-bottom: 10px;
         }
 
         .card button {
             width: 100%;
             background: #2874f0;
             color: white;
-            padding: 10px;
+            padding: 9px;
             border-radius: 6px;
             font-weight: bold;
         }
@@ -289,30 +292,36 @@
         .shops {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
+            gap: 15px;
         }
 
         .shop {
             background: white;
-            padding: 20px;
-            border-radius: 12px;
+            padding: 14px;
+            border-radius: 8px;
             border: 1px solid #eee;
         }
 
         .shop-icon {
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             background: #edf2ff;
             display: flex;
-            justify-content: center;
             align-items: center;
-            font-size: 28px;
-            margin-bottom: 15px;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 10px;
         }
 
         .shop h3 {
-            margin-bottom: 7px;
+            font-size: 15px;
+            margin-bottom: 5px;
+        }
+
+        .shop p {
+            font-size: 12px;
+            color: #666;
         }
 
         .shop p {
@@ -332,20 +341,31 @@
         .services {
             display: grid;
             grid-template-columns: repeat(6, 1fr);
-            gap: 15px;
+            gap: 10px;
         }
 
         .service {
             background: white;
-            padding: 22px 10px;
+            padding: 14px 8px;
             text-align: center;
-            border-radius: 10px;
+            border-radius: 8px;
             border: 1px solid #eee;
+            transition: .2s;
+        }
+
+        .service:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, .08);
         }
 
         .service-icon {
-            font-size: 38px;
-            margin-bottom: 10px;
+            font-size: 30px;
+            margin-bottom: 6px;
+        }
+
+        .service p {
+            font-size: 13px;
+            font-weight: 600;
         }
 
         /* FOOTER */
@@ -1241,20 +1261,20 @@
         }
 
         .card-img {
-            height: 135px;
+            height: 120px;
             font-size: 55px;
         }
 
         .card-content {
-            padding: 14px;
+            padding: 12px;
         }
 
         .card h3 {
-            font-size: 16px;
+            font-size: 15px;
         }
 
         .card p {
-            font-size: 13px;
+            font-size: 12px;
         }
 
         .card button {
@@ -1310,6 +1330,75 @@
 
         .deals-page-head h1 {
             font-size: 26px;
+        }
+
+        .shop-profile-header {
+            background: white;
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+        }
+
+        .shop-profile-icon {
+            width: 85px;
+            height: 85px;
+            border-radius: 16px;
+            background: #eef2ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 42px;
+            flex-shrink: 0;
+        }
+
+        .shop-profile-header h1 {
+            margin: 8px 0 5px;
+            font-size: 28px;
+        }
+
+        .shop-profile-header p {
+            margin: 4px 0;
+            color: #666;
+        }
+
+        .shop-profile-info {
+            background: white;
+            border-radius: 14px;
+            padding: 22px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .shop-profile-info h2 {
+            margin-bottom: 8px;
+        }
+
+        .shop-profile-info p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 700px) {
+
+            .shop-profile-header {
+                padding: 18px;
+                gap: 12px;
+            }
+
+            .shop-profile-icon {
+                width: 65px;
+                height: 65px;
+                font-size: 32px;
+            }
+
+            .shop-profile-header h1 {
+                font-size: 21px;
+            }
+
         }
 
         .deal-toolbar {
@@ -1838,10 +1927,531 @@
                 font-size: 25px
             }
         }
+
+        /* BUSSINESS KA LOGIN*/
+        /* GRROX LOGIN SCREEN */
+
+        .login-screen {
+            position: fixed;
+            inset: 0;
+            z-index: 99999;
+            background: #f5f7fb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .login-box {
+            width: 100%;
+            max-width: 430px;
+            background: white;
+            padding: 35px;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.10);
+            text-align: center;
+        }
+
+        .login-logo {
+            font-size: 34px;
+            font-weight: 800;
+            color: #2874f0;
+        }
+
+        .login-tagline {
+            color: #777;
+            font-size: 14px;
+            margin-top: 3px;
+            margin-bottom: 30px;
+        }
+
+        .login-box h2 {
+            font-size: 22px;
+            margin-bottom: 7px;
+        }
+
+        .login-subtitle {
+            color: #777;
+            font-size: 13px;
+            margin-bottom: 25px;
+        }
+
+        .login-options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .login-option {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-align: left;
+            padding: 17px;
+            background: white;
+            border: 1px solid #e1e5eb;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .login-option:hover {
+            border-color: #2874f0;
+            background: #f7faff;
+            transform: translateY(-2px);
+        }
+
+        .login-option-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 10px;
+            background: #edf3ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 25px;
+            flex-shrink: 0;
+        }
+
+        .login-option strong {
+            display: block;
+            font-size: 16px;
+            color: #222;
+            margin-bottom: 4px;
+        }
+
+        .login-option span {
+            display: block;
+            color: #777;
+            font-size: 12px;
+        }
+
+        /* BUSINESS SIGNUP FORM */
+
+        #businessSignupScreen .login-box {
+            max-width: 500px;
+            max-height: 90vh;
+            overflow-y: auto;
+            text-align: center;
+        }
+
+        #businessSignupScreen label {
+            display: block !important;
+            font-size: 13px;
+            font-weight: 600;
+            color: #333;
+            margin-top: 14px;
+            margin-bottom: 6px;
+        }
+
+        #businessSignupScreen input,
+        #businessSignupScreen select,
+        #businessSignupScreen textarea {
+            display: block;
+            width: 100% !important;
+            box-sizing: border-box;
+            padding: 12px;
+            border: 1px solid #d9dfe8;
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: inherit;
+            outline: none;
+            background: #fff;
+        }
+
+        #businessSignupScreen input:focus,
+        #businessSignupScreen select:focus,
+        #businessSignupScreen textarea:focus {
+            border-color: #2874f0;
+            box-shadow: 0 0 0 2px rgba(40, 116, 240, 0.10);
+        }
+
+        #businessSignupScreen textarea {
+            min-height: 80px;
+            resize: vertical;
+        }
+
+        #businessSignupScreen .login-subtitle {
+            margin-bottom: 22px;
+        }
+
+        #businessSignupScreen button {
+            font-family: inherit;
+        }
+
+        /* ============================= */
+        /* BUSINESS DASHBOARD */
+        /* ============================= */
+
+        #businessDashboard {
+            position: fixed;
+            inset: 0;
+            z-index: 99998;
+            background: #f5f7fb;
+            overflow: hidden;
+        }
+
+        .business-dashboard {
+            display: flex;
+            width: 100%;
+            height: 100vh;
+        }
+
+        /* SIDEBAR */
+
+        .business-sidebar {
+            width: 235px;
+            background: #ffffff;
+            border-right: 1px solid #e5e7eb;
+            padding: 20px 12px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .business-brand {
+            padding: 5px 12px 25px;
+        }
+
+        .business-brand div {
+            font-size: 25px;
+            font-weight: 800;
+            color: #2874f0;
+        }
+
+        .business-brand span {
+            display: block;
+            font-size: 11px;
+            color: #777;
+            margin-top: 2px;
+        }
+
+        .business-menu {
+            width: 100%;
+            border: none;
+            background: transparent;
+            padding: 12px 14px;
+            margin-bottom: 4px;
+            border-radius: 8px;
+            text-align: left;
+            font-size: 14px;
+            color: #555;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .business-menu:hover {
+            background: #f0f5ff;
+            color: #2874f0;
+        }
+
+        .business-menu.active {
+            background: #eaf2ff;
+            color: #2874f0;
+            font-weight: 600;
+        }
+
+        .business-menu.logout {
+            margin-top: auto;
+            color: #e53935;
+        }
+
+        .business-menu.logout:hover {
+            background: #fff1f1;
+        }
+
+
+        /* MAIN */
+
+        .business-main {
+            flex: 1;
+            overflow-y: auto;
+            padding: 25px;
+        }
+
+
+        /* TOP BAR */
+
+        .business-topbar {
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .business-topbar h2 {
+            font-size: 20px;
+            margin: 0 0 4px;
+        }
+
+        .business-topbar p {
+            font-size: 12px;
+            color: #777;
+            margin: 0;
+        }
+
+        .business-profile {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+
+        /* WELCOME */
+
+        .business-welcome {
+            background: linear-gradient(120deg, #2874f0, #6c63ff);
+            color: white;
+            border-radius: 12px;
+            padding: 22px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 18px;
+        }
+
+        .business-welcome h1 {
+            margin: 0 0 5px;
+            font-size: 25px;
+        }
+
+        .business-welcome p {
+            margin: 0;
+            font-size: 13px;
+            opacity: 0.9;
+        }
+
+        .verification-box {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 12px 16px;
+            border-radius: 9px;
+            text-align: right;
+        }
+
+        .verification-box span {
+            display: block;
+            font-size: 11px;
+            opacity: 0.9;
+        }
+
+        .verification-box strong {
+            display: block;
+            margin-top: 4px;
+            font-size: 13px;
+        }
+
+
+        /* CARDS */
+
+        .dashboard-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 18px;
+        }
+
+        .dashboard-card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 18px;
+        }
+
+        .dashboard-card span {
+            display: block;
+            color: #777;
+            font-size: 12px;
+            margin-bottom: 8px;
+        }
+
+        .dashboard-card strong {
+            font-size: 25px;
+            color: #222;
+        }
+
+
+        /* PANELS */
+
+        .dashboard-panel {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 18px;
+            margin-bottom: 18px;
+        }
+
+        .panel-heading {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .panel-heading h3 {
+            margin: 0;
+            font-size: 16px;
+        }
+
+        .panel-heading button {
+            border: none;
+            background: #2874f0;
+            color: white;
+            padding: 8px 13px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .dashboard-panel p {
+            color: #777;
+            font-size: 13px;
+        }
+
+        .shop-open {
+            color: #188038;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .empty-business {
+            text-align: center;
+            padding: 35px 10px;
+            color: #777;
+        }
+
+        .empty-business div {
+            font-size: 40px;
+            margin-bottom: 8px;
+        }
+
+        .empty-business h3 {
+            color: #333;
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+
+        .empty-business p {
+            margin: 0;
+        }
+
+
+        /* OTHER SECTIONS */
+
+        .business-section>h1 {
+            font-size: 24px;
+            margin-bottom: 7px;
+        }
+
+        .business-section>p {
+            color: #777;
+            font-size: 13px;
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+
+            .business-sidebar {
+                width: 190px;
+                padding: 15px 8px;
+            }
+
+            .business-main {
+                padding: 15px;
+            }
+
+            .business-topbar {
+                padding: 13px;
+            }
+
+            .business-topbar h2 {
+                font-size: 17px;
+            }
+
+            .business-profile {
+                display: none;
+            }
+
+            .business-welcome {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+
+            .verification-box {
+                text-align: left;
+            }
+
+            .dashboard-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ============================= */
+        /* BUSINESS ADD DEAL FORM */
+        /* ============================= */
+
+        #businessAddDeal .login-box {
+            max-width: 700px;
+        }
+
+        #businessAddDeal label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: #333;
+            margin-top: 16px;
+            margin-bottom: 7px;
+        }
+
+        #businessAddDeal input,
+        #businessAddDeal select,
+        #businessAddDeal textarea {
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 12px 13px;
+            border: 1px solid #d9dfe8;
+            border-radius: 8px;
+            background: #fff;
+            font-size: 14px;
+            font-family: inherit;
+            outline: none;
+        }
+
+        #businessAddDeal input:focus,
+        #businessAddDeal select:focus,
+        #businessAddDeal textarea:focus {
+            border-color: #2874f0;
+            box-shadow: 0 0 0 2px rgba(40, 116, 240, 0.10);
+        }
+
+        #businessAddDeal textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        #businessAddDeal input::placeholder,
+        #businessAddDeal textarea::placeholder {
+            color: #999;
+        }
+
+        #businessAddDeal button {
+            font-family: inherit;
+        }
     </style>
 </head>
 
 <body>
+
 
     <!-- HEADER -->
 
@@ -1864,7 +2474,7 @@
             🔔
         </button>
 
-        <button class="header-btn" onclick="showAuth()">
+        <button class="header-btn" onclick="openloginscreen()">
             👤 Profile
         </button>
 
@@ -1887,6 +2497,60 @@
     </header>
 
 
+
+
+
+    <!-- SHOP PROFILE PAGE -->
+    <main class="container" id="shopProfilePage" style="display:none;">
+
+        <div class="shop-profile-header">
+
+            <button onclick="showHomePage()" class="back-home">
+                ← Back
+            </button>
+
+            <div class="shop-profile-icon" id="shopProfileIcon">
+                🏪
+            </div>
+
+            <div>
+                <h1 id="shopProfileName">Shop Name</h1>
+
+                <p id="shopProfileCategory">
+                    Local Business
+                </p>
+
+                <p id="shopProfileLocation">
+                    📍 Jaipur
+                </p>
+            </div>
+
+        </div>
+
+        <div class="shop-profile-info">
+
+            <h2>About this Shop</h2>
+
+            <p id="shopProfileDescription">
+                Local business listed on GRROX.
+            </p>
+
+        </div>
+
+        <div class="section">
+
+            <div class="section-head">
+                <h2 id="shopProfileDealsTitle">
+                    🔥 Shop Deals
+                </h2>
+            </div>
+
+            <div class="deals" id="shopProfileDeals">
+            </div>
+
+        </div>
+
+    </main>
 
     <!-- DEDICATED DEALS PAGE -->
     <main class="container deals-page" id="dealsPage">
@@ -1913,6 +2577,77 @@
         </div>
 
         <div class="deals-page-grid" id="dealsPageContainer"></div>
+
+        <!-- ADD DEAL SECTION -->
+
+        <section class="section" id="addDealSection">
+
+            <div class="section-head">
+                <h2>➕ Add New Deal</h2>
+            </div>
+
+            <div style="
+        background:white;
+        padding:20px;
+        border-radius:12px;
+        max-width:700px;
+        box-shadow:0 3px 12px rgba(0,0,0,0.08);
+    ">
+
+                <input type="text" id="dealName" placeholder="Product / Deal Name"
+                    style="width:100%;padding:12px;margin-bottom:10px;">
+
+                <input type="number" id="dealPrice" placeholder="Selling Price"
+                    style="width:100%;padding:12px;margin-bottom:10px;">
+
+                <input type="number" id="dealOriginalPrice" placeholder="Original Price"
+                    style="width:100%;padding:12px;margin-bottom:10px;">
+
+                <input type="text" id="dealShopName" placeholder="Shop Name"
+                    style="width:100%;padding:12px;margin-bottom:10px;">
+
+                <input type="text" id="dealOffer" placeholder="Offer e.g. 30% OFF"
+                    style="width:100%;padding:12px;margin-bottom:10px;">
+
+                <select id="dealCategory" style="width:100%;padding:12px;margin-bottom:10px;">
+                    <option value="Electronics">Electronics</option>
+                    <option value="Clothing">Clothing</option>
+                    <option value="Grocery">Grocery</option>
+                    <option value="Food">Food</option>
+                    <option value="Furniture">Furniture</option>
+                    <option value="Stationery">Stationery</option>
+                    <option value="Salon">Salon</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <input type="text" id="dealIcon" placeholder="Emoji e.g. 🎧"
+                    style="width:100%;padding:12px;margin-bottom:10px;">
+
+                <input type="text" id="dealCity" value="Jaipur" placeholder="City"
+                    style="width:100%;padding:12px;margin-bottom:10px;">
+
+                <textarea id="dealDescription" placeholder="Deal Description"
+                    style="width:100%;padding:12px;margin-bottom:10px;height:100px;"></textarea>
+
+                <input type="text" id="dealImage" placeholder="Image URL (optional)"
+                    style="width:100%;padding:12px;margin-bottom:10px;">
+
+                <button onclick="addDealToBackend()" style="
+                width:100%;
+                padding:13px;
+                border:none;
+                border-radius:8px;
+                background:#315bea;
+                color:white;
+                font-size:16px;
+                cursor:pointer;
+            ">
+                    🚀 Add Deal
+                </button>
+
+            </div>
+
+        </section>
 
     </main>
 
@@ -2386,97 +3121,96 @@
             Services
         </button>
 
-        <button onclick="showAuth()">
+        <button onclick="openloginScreen()">
             <span>👤</span>
             Profile
         </button>
 
+
+
     </div>
+  
 
 
     <script>
 
         /* DEMO DEAL DATA */
 
-        const deals = [
+        let deals = [];
 
-            {
-                title: "Fashion Collection",
-                shop: "Local Fashion Store",
-                category: "Clothing",
-                offer: "30% OFF",
-                icon: "👕",
-                description: "Get up to 30% OFF on selected clothing items."
-            },
+        async function loadDealsFromBackend() {
+            try {
+                const response = await fetch("http://localhost:5000/api/products");
 
-            {
-                title: "Grocery Combo",
-                shop: "Jaipur Grocery Mart",
-                category: "Grocery",
-                offer: "20% OFF",
-                icon: "🛒",
-                description: "Save money on selected grocery combo packs."
-            },
+                const data = await response.json();
 
-            {
-                title: "Mobile Accessories",
-                shop: "Mobile Hub",
-                category: "Electronics",
-                offer: "25% OFF",
-                icon: "📱",
-                description: "Special discount on mobile accessories."
-            },
+                if (!response.ok) {
+                    throw new Error(data.error || "Failed to load deals");
+                }
 
-            {
-                title: "Student Combo",
-                shop: "City Stationery",
-                category: "Stationery",
-                offer: "15% OFF",
-                icon: "📚",
-                description: "Special stationery combo for students."
-            },
+                deals = data.products.map(product => ({
+                    id: product._id,
+                    title: product.name,
+                    shop: product.shopName || "Local GRROX Shop",
+                    category: product.category || "Other",
+                    offer: product.offer || "DEAL",
+                    icon: product.icon || "🛍️",
+                    description: product.description || "GRROX local deal",
+                    price: product.price,
+                    image: product.image || "",
+                    link: product.link || ""
+                }));
 
-            {
-                title: "LED Lights",
-                shop: "Jaipur Electricals",
-                category: "Electrical",
-                offer: "20% OFF",
-                icon: "💡",
-                description: "Discount on selected LED lighting products."
-            },
+                displayDeals(deals);
+                renderDealsPage();
 
-            {
-                title: "Food Combo",
-                shop: "Local Food Corner",
-                category: "Food",
-                offer: "25% OFF",
-                icon: "🍔",
-                description: "Special food combo offer."
-            },
+                console.log("GRROX Deals loaded from MongoDB:", deals);
 
-            {
-                title: "Salon Package",
-                shop: "Style Salon",
-                category: "Salon",
-                offer: "30% OFF",
-                icon: "💇",
-                description: "Special discount on selected salon services."
-            },
+            } catch (error) {
+                console.error("Deals loading failed:", error);
 
-            {
-                title: "Home Furniture",
-                shop: "Jaipur Furniture House",
-                category: "Furniture",
-                offer: "20% OFF",
-                icon: "🛋️",
-                description: "Special offers on selected furniture."
+                document.getElementById("dealContainer").innerHTML = `
+            <div style="background:white;padding:30px;border-radius:10px;grid-column:1/-1;text-align:center">
+                <h3>Deals load nahi ho paayi</h3>
+                <p style="margin-top:8px;color:#777;">
+                    Backend check karo.
+                </p>
+            </div>
+        `;
             }
-
-        ];
-
+        }
 
         /* DEMO SHOPS */
 
+
+
+        function viewShopDeals(shopName) {
+
+            const shop = shops.find(
+                s => s.name.toLowerCase() === shopName.toLowerCase()
+            );
+
+            let shopDeals = deals.filter(
+                deal => (deal.shop || "").toLowerCase() === shopName.toLowerCase()
+            );
+
+            if (shopDeals.length === 0 && shop) {
+                shopDeals = deals.filter(
+                    deal => deal.category === shop.category
+                );
+            }
+
+            document.getElementById("modal").style.display = "none";
+
+            document.getElementById("dealTitle").innerText =
+                `🏪 ${shopName} Deals`;
+
+            displayDeals(shopDeals);
+
+            document.getElementById("dealsSection").scrollIntoView({
+                behavior: "smooth"
+            });
+        }
         const shops = [
 
             {
@@ -2509,6 +3243,23 @@
 
         ];
 
+        function displayShops(list = shops) {
+            const container = document.getElementById("shopContainer");
+            if (!container) return;
+
+            container.innerHTML = "";
+
+            list.forEach((shop, index) => {
+                container.innerHTML += `
+                    <div class="shop">
+                        <div class="shop-icon">${shop.icon || "🏪"}</div>
+                        <h3>${shop.name}</h3>
+                        <p>${shop.category}<br>📍 ${shop.location}</p>
+                        <button onclick="openShop(${index})">View Shop</button>
+                    </div>
+                `;
+            });
+        }
 
 
         /* DEDICATED DEALS PAGE */
@@ -2519,12 +3270,6 @@
             document.querySelector("main.container:not(.deals-page)").style.display = "none";
             document.getElementById("dealsPage").style.display = "block";
             renderDealsPage();
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        }
-
-        function showHomePage() {
-            document.getElementById("dealsPage").style.display = "none";
-            document.querySelector("main.container:not(.deals-page)").style.display = "block";
             window.scrollTo({ top: 0, behavior: "smooth" });
         }
 
@@ -2630,33 +3375,38 @@
                 return;
             }
 
-            list.forEach((deal, index) => {
+            list.forEach((deal) => {
 
                 container.innerHTML += `
 
             <div class="card">
 
                 <div class="card-img">
-                    ${deal.icon}
+                    ${deal.icon || "🛍️"}
                 </div>
 
                 <div class="card-content">
 
                     <span class="badge">
-                        ${deal.offer}
+                        ${deal.offer || "DEAL"}
                     </span>
 
                     <h3>${deal.title}</h3>
 
                     <p>
-                        ${deal.shop}<br>
+                        ${deal.shop || "Local GRROX Shop"}<br>
                         📍 Jaipur
                     </p>
 
-                    <button onclick="openDeal(${index})">
+                    <h3 style="margin-top:8px;">
+                        ₹${deal.price || 0}
+                    </h3>
+
+                    <button onclick="openDealById('${deal.id}')">
                         View Deal
                     </button>
 
+                  
                 </div>
 
             </div>
@@ -2667,45 +3417,92 @@
 
         }
 
+        async function deleteDeal(id) {
 
-        /* SHOW SHOPS */
+            const confirmDelete = confirm(
+                "Kya tum ye deal delete karna chahte ho?"
+            );
 
-        function displayShops(list = shops) {
+            if (!confirmDelete) return;
 
-            const container = document.getElementById("shopContainer");
+            try {
+                const response = await fetch(
+                    `http://localhost:5000/api/products/${id}`,
+                    {
+                        method: "DELETE"
+                    }
+                );
 
-            container.innerHTML = "";
+                const data = await response.json();
 
-            list.forEach((shop, index) => {
+                if (!response.ok) {
+                    throw new Error(data.message || "Delete failed");
+                }
 
-                container.innerHTML += `
+                alert("Deal delete ho gayi!");
 
-            <div class="shop">
+                await loadDealsFromBackend();
 
-                <div class="shop-icon">
-                    ${shop.icon}
-                </div>
-
-                <h3>${shop.name}</h3>
-
-                <p>
-                    ${shop.category}<br>
-                    📍 ${shop.location}
-                </p>
-
-                <button onclick="openShop(${index})">
-                    View Shop
-                </button>
-
-            </div>
-
-        `;
-
-            });
-
+            } catch (error) {
+                console.error(error);
+                alert("Deal delete nahi hui.");
+            }
         }
 
 
+        async function editDeal(id) {
+            console.log("EDIT ID:", id);
+            const deal = deals.find(item => item.id === id);
+
+            if (!deal) {
+                alert("Deal nahi mili.");
+                return;
+            }
+
+            const newName = prompt(
+                "Deal ka naam:",
+                deal.title
+            );
+
+            if (newName === null) return;
+
+            const newPrice = prompt(
+                "Deal ki price:",
+                deal.price
+            );
+
+            if (newPrice === null) return;
+
+            try {
+                const response = await fetch(
+                    `http://localhost:5000/api/products/${id}`,
+                    {
+                        method: "PUT",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({
+                            name: newName,
+                            price: Number(newPrice)
+                        })
+                    }
+                );
+
+                const data = await response.json();
+
+                if (!response.ok) {
+                    throw new Error(data.message || "Update failed");
+                }
+
+                alert("Deal update ho gayi!");
+
+                await loadDealsFromBackend();
+
+            } catch (error) {
+                console.error(error);
+                alert("Deal update nahi hui.");
+            }
+        }
         /* FILTER */
 
         function filterDeals(category) {
@@ -2755,10 +3552,10 @@
 
                 deal.title.toLowerCase().includes(query) ||
                 deal.shop.toLowerCase().includes(query) ||
-                deal.category.toLowerCase().includes(query)
+                deal.category.toLowerCase().includes(query) ||
+                (deal.description || "").toLowerCase().includes(query)
 
             );
-
             document.getElementById("dealTitle").innerText =
                 "🔎 Search Results";
 
@@ -2787,20 +3584,136 @@
             const deal = deals[index];
 
             document.getElementById("modalIcon").innerText =
-                deal.icon;
+                deal.icon || "🛍️";
 
             document.getElementById("modalTitle").innerText =
                 deal.title;
 
-            document.getElementById("modalText").innerHTML =
-                `<b>${deal.offer}</b><br><br>
-        Shop: ${deal.shop}<br>
-        Category: ${deal.category}<br>
-        Location: Jaipur<br><br>
-        ${deal.description}`;
+            /* wishlist */
+
+            const wishlist = JSON.parse(
+                localStorage.getItem("grroxWishlist") || "[]"
+            );
+
+            const isSaved = wishlist.some(
+                item => item.id === deal.id
+            );
+
+            const wishlistButton = document.createElement("button");
+
+            wishlistButton.innerText = isSaved
+                ? "❤️ Remove from Wishlist"
+                : "🤍 Add to Wishlist";
+
+            wishlistButton.style.cssText = `
+    width:100%;
+    margin-top:15px;
+    padding:11px;
+    border:none;
+    border-radius:8px;
+    background:#fff0f3;
+    color:#d6335c;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:600;
+`;
+
+            wishlistButton.onclick = function () {
+
+                let saved = JSON.parse(
+                    localStorage.getItem("grroxWishlist") || "[]"
+                );
+
+                const exists = saved.some(
+                    item => item.id === deal.id
+                );
+
+                if (exists) {
+
+                    saved = saved.filter(
+                        item => item.id !== deal.id
+                    );
+
+                    wishlistButton.innerText =
+                        "🤍 Add to Wishlist";
+
+                } else {
+
+                    saved.push(deal);
+
+                    wishlistButton.innerText =
+                        "❤️ Remove from Wishlist";
+                }
+
+                localStorage.setItem(
+                    "grroxWishlist",
+                    JSON.stringify(saved)
+                );
+            };
+
+            document.getElementById("modalText")
+                .appendChild(wishlistButton);
+
+
+
+            const originalPrice = Number(deal.originalPrice || 0);
+            const price = Number(deal.price || 0);
+
+            let priceHTML = "";
+
+            if (price) {
+                priceHTML = `
+            <div style="margin:12px 0;">
+                <span style="font-size:24px;font-weight:700;">
+                    ₹${price}
+                </span>
+
+                ${originalPrice > price
+                        ? `
+                    <span style="
+                        margin-left:8px;
+                        color:#888;
+                        text-decoration:line-through;
+                    ">
+                        ₹${originalPrice}
+                    </span>
+                    `
+                        : ""
+                    }
+            </div>
+        `;
+            }
+
+            document.getElementById("modalText").innerHTML = `
+        <span style="
+            display:inline-block;
+            background:#e8f5e9;
+            color:#16803c;
+            padding:6px 10px;
+            border-radius:6px;
+            font-weight:600;
+        ">
+            ${deal.offer || "DEAL"}
+        </span>
+
+        ${priceHTML}
+
+        <div style="line-height:1.7;">
+            <b>🏪 Shop:</b> ${deal.shop || "Local GRROX Shop"}<br>
+            <b>📂 Category:</b> ${deal.category || "Other"}<br>
+            <b>📍 Location:</b> ${deal.city || "Jaipur"}
+        </div>
+
+        <hr style="margin:15px 0;border:none;border-top:1px solid #eee;">
+
+        <b>About this deal</b>
+
+        <p style="margin-top:8px;color:#555;">
+            ${deal.description || "No description available."}
+        </p>
+    `;
 
             document.getElementById("modal").style.display = "flex";
-
         }
 
 
@@ -2810,21 +3723,154 @@
 
             const shop = shops[index];
 
-            document.getElementById("modalIcon").innerText =
-                shop.icon;
+            if (!shop) {
+                alert("Shop information not found.");
+                return;
+            }
 
-            document.getElementById("modalTitle").innerText =
+            document.getElementById("modal").style.display = "none";
+
+            document.querySelectorAll(
+                'main.container, #explorePage, #businessPage, .footer'
+            ).forEach(x => x.style.display = "none");
+
+            document.getElementById("shopProfilePage").style.display = "block";
+
+            document.getElementById("shopProfileIcon").innerText =
+                shop.icon || "🏪";
+
+            document.getElementById("shopProfileName").innerText =
                 shop.name;
 
-            document.getElementById("modalText").innerHTML =
-                `<b>${shop.category}</b><br><br>
-        📍 ${shop.location}<br><br>
-        This is a demo shop profile. Real business information
-        will come from the GRROX backend later.`;
+            document.getElementById("shopProfileCategory").innerText =
+                shop.category || "Local Business";
 
-            document.getElementById("modal").style.display = "flex";
+            document.getElementById("shopProfileLocation").innerText =
+                `📍 ${shop.location || "Jaipur"}`;
 
+            document.getElementById("shopProfileDescription").innerText =
+                `${shop.name} is a local ${shop.category || "business"} listed on GRROX.`;
+
+            const shopDeals = deals.filter(
+                deal =>
+                    (deal.shop || "").toLowerCase() ===
+                    shop.name.toLowerCase()
+            );
+
+            const categoryDeals = deals.filter(
+                deal =>
+                    (deal.category || "").toLowerCase() ===
+                    (shop.category || "").toLowerCase()
+            );
+
+            const finalDeals =
+                shopDeals.length > 0 ? shopDeals : categoryDeals;
+
+            const container =
+                document.getElementById("shopProfileDeals");
+
+            if (finalDeals.length === 0) {
+
+                container.innerHTML = `
+            <div style="
+                background:white;
+                padding:30px;
+                border-radius:12px;
+                text-align:center;
+                grid-column:1/-1;
+            ">
+                <h3>No deals available</h3>
+                <p style="margin-top:8px;color:#777;">
+                    This shop has no active deals yet.
+                </p>
+            </div>
+        `;
+
+            } else {
+
+                container.innerHTML = "";
+
+                finalDeals.forEach((deal) => {
+
+                    container.innerHTML += `
+                <div class="card">
+
+                    <div class="card-img">
+                        ${deal.icon || "🛍️"}
+                    </div>
+
+                    <div class="card-content">
+
+                        <span class="badge">
+                            ${deal.offer || "DEAL"}
+                        </span>
+
+                        <h3>${deal.title}</h3>
+
+                        <p>
+                            ${deal.shop}<br>
+                            📍 Jaipur
+                        </p>
+
+                        <h3 style="margin-top:8px;">
+                            ₹${deal.price || 0}
+                        </h3>
+
+                        <button
+                            onclick="openDealById('${deal.id}')">
+                            View Deal
+                        </button>
+
+                    </div>
+
+                </div>
+            `;
+                });
+            }
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
         }
+
+        function viewShopDeals(shopName) {
+
+            const shop = shops.find(
+                s => s.name.toLowerCase() === shopName.toLowerCase()
+            );
+
+            if (!shop) {
+                alert("Shop information not found.");
+                return;
+            }
+
+            let shopDeals = deals.filter(
+                deal =>
+                    (deal.shop || "").toLowerCase() ===
+                    shopName.toLowerCase()
+            );
+
+            if (shopDeals.length === 0) {
+                shopDeals = deals.filter(
+                    deal =>
+                        (deal.category || "").toLowerCase() ===
+                        (shop.category || "").toLowerCase()
+                );
+            }
+
+            document.getElementById("modal").style.display = "none";
+
+            document.getElementById("dealTitle").innerText =
+                `🏪 ${shop.name} Deals`;
+
+            displayDeals(shopDeals);
+
+            document.getElementById("dealsSection").scrollIntoView({
+                behavior: "smooth"
+            });
+        }
+
 
 
         /* SERVICES */
@@ -3010,8 +4056,10 @@
         renderExploreFilters();
 
         document.getElementById("dealsPage").style.display = "none";
-        displayDeals();
+        loadDealsFromBackend();
         displayShops();
+
+
 
 
         /* ===== ACCOUNT SYSTEM ===== */
@@ -3063,7 +4111,974 @@
         function logoutAccount() { localStorage.removeItem('grroxProfile'); localStorage.removeItem('grroxRole'); localStorage.removeItem('grroxPhone'); authRole = ''; authPhone = ''; document.getElementById('profileDashboard').style.display = 'none'; showAuthStep('roleStep'); }
         function businessDashboardAction(type) { alert(type + ' management screen is ready for backend/API connection.'); }
 
+
+        async function addDealToBackend() {
+
+            const deal = {
+                name: document.getElementById("dealName").value,
+                price: Number(document.getElementById("dealPrice").value),
+                originalPrice: Number(document.getElementById("dealOriginalPrice").value),
+                shopName: document.getElementById("dealShopName").value,
+                offer: document.getElementById("dealOffer").value,
+                category: document.getElementById("dealCategory").value,
+                icon: document.getElementById("dealIcon").value || "🛍️",
+                city: document.getElementById("dealCity").value || "Jaipur",
+                description: document.getElementById("dealDescription").value,
+                image: document.getElementById("dealImage").value,
+                link: ""
+            };
+
+            if (!deal.name || !deal.price || !deal.shopName) {
+                alert("Product Name, Price aur Shop Name bharna zaroori hai.");
+                return;
+            }
+
+            try {
+                const response = await fetch("http://localhost:5000/api/products", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(deal)
+                });
+
+                const data = await response.json();
+
+                if (!response.ok) {
+                    throw new Error(data.error || "Deal save failed");
+                }
+
+                alert("🎉 Deal successfully added!");
+
+                document.getElementById("dealName").value = "";
+                document.getElementById("dealPrice").value = "";
+                document.getElementById("dealOriginalPrice").value = "";
+                document.getElementById("dealShopName").value = "";
+                document.getElementById("dealOffer").value = "";
+                document.getElementById("dealIcon").value = "";
+                document.getElementById("dealDescription").value = "";
+                document.getElementById("dealImage").value = "";
+
+                await loadDealsFromBackend();
+
+            } catch (error) {
+                console.error(error);
+                alert("Deal add nahi hui. Backend check karo.");
+            }
+        }
+
+
+
+
+        function showBusinessSection(section) {
+            const sections = [
+                "businessOverview",
+                "businessDeals",
+                "businessAddDeal",
+                "businessShop",
+                "businessCustomers",
+                "businessAnalytics",
+                "businessSettings"
+            ];
+
+            sections.forEach(id => {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.style.display = "none";
+                }
+            });
+
+            const sectionId =
+                "business" +
+                section.charAt(0).toUpperCase() +
+                section.slice(1);
+
+            const selectedSection = document.getElementById(sectionId);
+
+            if (selectedSection) {
+                selectedSection.style.display = "block";
+            }
+        }
+
+       function businessLogout() {
+    localStorage.removeItem("grroxBusinessId");
+    localStorage.removeItem("grroxBusinessName");
+    alert("Logged out successfully!");
+    location.reload();
+}
+
+        async function saveBusinessDeal() {
+            const businessId = localStorage.getItem("grroxBusinessId");
+            const businessName = localStorage.getItem("grroxBusinessName");
+
+            const dealData = {
+                name: document.querySelector("#businessAddDeal #dealName").value.trim(),
+                category: document.querySelector("#businessAddDeal #dealCategory").value,
+                originalPrice: Number(document.querySelector("#businessAddDeal #dealMRP").value),
+                price: Number(document.querySelector("#businessAddDeal #dealPrice").value),
+                offer: document.querySelector("#businessAddDeal #dealOffer").value.trim(),
+                description: document.querySelector("#businessAddDeal #dealDescription").value.trim(),
+                image: document.querySelector("#businessAddDeal #dealImage").value.trim(),
+                shopName: businessName || "Local GRROX Shop",
+                businessId: businessId
+            };
+
+            if (!dealData.name || !dealData.category || !dealData.originalPrice || !dealData.price) {
+                alert("Please fill Deal Name, Category, MRP and Deal Price.");
+                return;
+            }
+
+            if (!businessId) {
+                alert("Business account not found. Please login again.");
+                return;
+            }
+
+            try {
+                const response = await fetch("http://localhost:5000/api/products", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(dealData)
+                });
+
+                const data = await response.json();
+
+                if (!response.ok) {
+                    throw new Error(data.message || "Deal save failed");
+                }
+
+                alert("Deal added successfully!");
+                console.log("Deal saved:", data.product);
+
+                document.getElementById("dealName").value = "";
+                document.getElementById("dealCategory").value = "";
+                document.getElementById("dealMRP").value = "";
+                document.getElementById("dealPrice").value = "";
+                document.getElementById("dealOffer").value = "";
+                document.getElementById("dealDescription").value = "";
+                document.getElementById("dealImage").value = "";
+
+                showBusinessSection("deals");
+                await loadBusinessDeals();
+            } catch (error) {
+                console.error("Deal save error:", error);
+                alert(error.message || "Deal save failed.");
+            }
+        }
+
+        async function loadBusinessDeals() {
+            const businessId = localStorage.getItem("grroxBusinessId");
+            const container = document.getElementById("businessDealsContainer");
+
+            if (!businessId) {
+                alert("Business account not found.");
+                return;
+            }
+
+            if (!container) {
+                return;
+            }
+
+            try {
+                const response = await fetch("http://localhost:5000/api/products");
+                const data = await response.json();
+
+                if (!response.ok) {
+                    throw new Error(data.message || "Deals fetch failed");
+                }
+
+                const myDeals = Array.isArray(data.products)
+                    ? data.products.filter(deal => String(deal.businessId) === String(businessId))
+                    : [];
+
+                if (myDeals.length === 0) {
+                    container.innerHTML = `
+                        <div style="
+                            background:white;
+                            border:1px solid #e5e7eb;
+                            border-radius:10px;
+                            padding:40px;
+                            text-align:center;
+                            color:#777;
+                        ">
+                            <div style="font-size:40px;">📦</div>
+                            <h3 style="color:#333;">No deals yet</h3>
+                            <p>Create your first deal to reach local customers.</p>
+                        </div>
+                    `;
+                    return;
+                }
+
+                container.innerHTML = myDeals.map(deal => `
+                    <div style="
+                        background:white;
+                        border:1px solid #e5e7eb;
+                        border-radius:10px;
+                        padding:18px;
+                        margin-bottom:15px;
+                    ">
+                        <div style="
+                            display:flex;
+                            justify-content:space-between;
+                            align-items:center;
+                            gap:15px;
+                        ">
+                            <div>
+                                <h3 style="margin:0 0 7px;">${deal.name}</h3>
+                                <p style="margin:0;color:#777;font-size:13px;">${deal.category}</p>
+                            </div>
+                            <div style="text-align:right;">
+                                <div style="color:#777;font-size:12px;">MRP ₹${deal.originalPrice}</div>
+                                <strong style="font-size:20px;color:#2874f0;">₹${deal.price}</strong>
+                            </div>
+                        </div>
+
+                        <div style="margin-top:12px;color:#188038;font-weight:600;font-size:13px;">
+                            ${deal.offer || "DEAL"}
+                        </div>
+
+                        <p style="color:#666;font-size:13px;margin-bottom:12px;">
+                            ${deal.description || ""}
+                        </p>
+
+                        <div style="display:flex;gap:8px;">
+                            <button
+                                onclick="editBusinessDeal('${deal._id}')"
+                                style="
+                                    flex:1;
+                                    background:#ff9800;
+                                    color:white;
+                                    border:none;
+                                    padding:10px;
+                                    border-radius:7px;
+                                    font-weight:bold;
+                                    cursor:pointer;
+                                "
+                            >
+                                Edit Deal
+                            </button>
+
+                            <button
+                                onclick="deleteBusinessDeal('${deal._id}')"
+                                style="
+                                    flex:1;
+                                    background:#e53935;
+                                    color:white;
+                                    border:none;
+                                    padding:10px;
+                                    border-radius:7px;
+                                    font-weight:bold;
+                                    cursor:pointer;
+                                "
+                            >
+                                Delete Deal
+                            </button>
+                        </div>
+                    </div>
+                `).join("");
+            } catch (error) {
+                console.error("Business deals error:", error);
+                container.innerHTML = `
+                    <div style="
+                        background:white;
+                        padding:30px;
+                        border-radius:10px;
+                        color:#d93025;
+                    ">
+                        Unable to load deals.
+                    </div>
+                `;
+            }
+        }
+
+        async function editBusinessDeal(id) {
+            const newName = prompt("Deal ka naam:");
+
+            if (newName === null || newName.trim() === "") {
+                return;
+            }
+
+            const newPrice = prompt("Deal ki new price:");
+
+            if (newPrice === null || newPrice.trim() === "") {
+                return;
+            }
+
+            if (isNaN(Number(newPrice))) {
+                alert("Please enter a valid price.");
+                return;
+            }
+
+            try {
+                const response = await fetch(`http://localhost:5000/api/products/${id}`, {
+                    method: "PUT",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        name: newName.trim(),
+                        price: Number(newPrice)
+                    })
+                });
+
+                const data = await response.json();
+
+                if (!response.ok) {
+                    throw new Error(data.message || "Deal update failed");
+                }
+
+                alert("Deal updated successfully!");
+                await loadBusinessDeals();
+            } catch (error) {
+                console.error("Edit deal error:", error);
+                alert("Deal update nahi hui.");
+            }
+        }
+
+        async function deleteBusinessDeal(id) {
+            if (!confirm("Delete this deal?")) {
+                return;
+            }
+
+            try {
+                const response = await fetch(`http://localhost:5000/api/products/${id}`, {
+                    method: "DELETE"
+                });
+
+                const data = await response.json();
+
+                if (!response.ok) {
+                    throw new Error(data.message || "Deal delete failed");
+                }
+
+                alert("Deal deleted successfully!");
+                await loadBusinessDeals();
+            } catch (error) {
+                console.error("Delete deal error:", error);
+                alert("Deal delete nahi hui.");
+            }
+        }
+
+
     </script>
+
+    <!-- BUSINESS PAGE LOGIN -->
+    <!-- GRROX LOGIN SCREEN -->
+    <div id="loginScreen" class="login-screen" style="display:none;">
+        <div class="login-box">
+
+            <div class="login-logo">GRROX</div>
+            <div class="login-tagline">Where Local Connects</div>
+
+            <h2>How do you want to continue?</h2>
+            <p class="login-subtitle">Choose an account type to continue</p>
+
+            <div class="login-options">
+
+                <button class="login-option" onclick="selectAccountType('customer')">
+                    <div class="login-option-icon">👤</div>
+                    <div>
+                        <strong>Customer</strong>
+                        <span>Explore local deals, shops & services</span>
+                    </div>
+                </button>
+
+                <button class="login-option" onclick="selectAccountType('business')">
+                    <div class="login-option-icon">🏪</div>
+                    <div>
+                        <strong>Business</strong>
+                        <span>Manage your shop, deals & customers</span>
+                    </div>
+                </button>
+                
+</div>
+            <button onclick="closeLoginScreen()"
+    style="margin-top:20px;background:none;border:none;color:#777;cursor:pointer;">
+    ← Back to Home
+</button>
+</div>
+        </div>
+    
+    <!-- BUSINESS LOGIN SCREEN -->
+    <div id="businessLoginScreen" class="login-screen" style="display:none;">
+        <div class="login-box">
+
+            <div class="login-logo">GRROX</div>
+            <div class="login-tagline">Where Local Connects</div>
+
+            <h2>Business Login</h2>
+            <p class="login-subtitle">
+                Login with your registered mobile number
+            </p>
+
+            <div style="text-align:left;">
+
+                <label style="display:block;font-size:13px;font-weight:600;margin-bottom:7px;">
+                    Mobile Number
+                </label>
+
+                <input id="businessMobile" type="tel" maxlength="10" placeholder="Enter mobile number"
+                    style="width:100%;padding:13px;border:1px solid #ddd;border-radius:8px;font-size:14px;box-sizing:border-box;">
+
+                <button onclick="sendBusinessOTP()"
+                    style="width:100%;margin-top:15px;background:#2874f0;color:white;border:none;padding:13px;border-radius:8px;font-weight:bold;cursor:pointer;">
+                    Send OTP
+                </button>
+
+            </div>
+
+            <p style="margin-top:22px;font-size:13px;color:#777;">
+                Don't have a business account?
+            </p>
+
+            <button onclick="openBusinessSignup()"
+                style="background:none;border:none;color:#2874f0;font-weight:bold;cursor:pointer;">
+                Create Business Account
+            </button>
+
+            <br>
+
+            <button onclick="backToAccountSelection()"
+                style="margin-top:20px;background:none;border:none;color:#777;cursor:pointer;">
+                ← Back
+            </button>
+
+        </div>
+    </div>
+
+    <script>
+
+        function openloginscreen() {
+            document.getElementById("loginScreen").style.display = "flex";
+        }
+        function closeloginscreen() {
+            document.getElementById("loginScreen").style.display = "none";
+        }
+function openLoginScreen() {
+    document.getElementById("loginScreen").style.display = "flex";
+}
+
+function closeLoginScreen() {
+    document.getElementById("loginScreen").style.display = "none";
+}
+        function selectAccountType(type) {
+
+            if (type === "business") {
+                document.getElementById("loginScreen").style.display = "none";
+                document.getElementById("businessLoginScreen").style.display = "flex";
+            }
+
+            if (type === "customer") {
+                alert("Customer Login coming next!");
+            }
+
+        }
+
+        function backToAccountSelection() {
+            document.getElementById("businessLoginScreen").style.display = "none";
+            document.getElementById("loginScreen").style.display = "flex";
+        }
+
+        function sendBusinessOTP() {
+            const mobile = document.getElementById("businessMobile").value.trim();
+
+            if (mobile.length !== 10 || !/^[0-9]+$/.test(mobile)) {
+                alert("Please enter a valid 10-digit mobile number.");
+                return;
+            }
+
+            document.getElementById("businessLoginScreen").style.display = "none";
+            document.getElementById("businessOTPScreen").style.display = "flex";
+
+            console.log("OTP requested for:", mobile);
+        }
+        function verifyBusinessOTP() {
+            const otp = document.getElementById("businessOTP").value.trim();
+
+            if (otp !== "123456") {
+                alert("Invalid OTP. For testing, enter 123456.");
+                return;
+            }
+
+            const mobile = document.getElementById("businessMobile").value.trim();
+
+            document.getElementById("businessOTPScreen").style.display = "none";
+            document.getElementById("businessSignupScreen").style.display = "flex";
+
+            document.getElementById("signupMobile").value = mobile;
+        }
+
+        function backToBusinessLogin() {
+            document.getElementById("businessOTPScreen").style.display = "none";
+            document.getElementById("businessLoginScreen").style.display = "flex";
+        }
+
+        function openBusinessSignup() {
+            document.getElementById("businessLoginScreen").style.display = "none";
+            document.getElementById("businessSignupScreen").style.display = "flex";
+
+            const mobile = document.getElementById("businessMobile").value.trim();
+
+            if (mobile) {
+                document.getElementById("signupMobile").value = mobile;
+            }
+        }
+        async function createBusinessAccount() {
+
+            const businessData = {
+                ownerName: document.getElementById("signupOwnerName").value.trim(),
+                mobile: document.getElementById("signupMobile").value.trim(),
+                businessName: document.getElementById("signupBusinessName").value.trim(),
+                category: document.getElementById("signupCategory").value,
+                address: document.getElementById("signupAddress").value.trim(),
+                city: document.getElementById("signupCity").value.trim(),
+                area: document.getElementById("signupArea").value.trim(),
+                pincode: document.getElementById("signupPincode").value.trim()
+            };
+
+            if (
+                !businessData.ownerName ||
+                !businessData.mobile ||
+                !businessData.businessName ||
+                !businessData.category ||
+                !businessData.address ||
+                !businessData.city ||
+                !businessData.area ||
+                !businessData.pincode
+            ) {
+                alert("Please fill all required fields.");
+                return;
+            }
+
+            if (!/^[0-9]{10}$/.test(businessData.mobile)) {
+                alert("Please enter a valid 10-digit mobile number.");
+                return;
+            }
+
+            if (!/^[0-9]{6}$/.test(businessData.pincode)) {
+                alert("Please enter a valid 6-digit pincode.");
+                return;
+            }
+
+            try {
+
+                const response = await fetch(
+                    "http://localhost:5000/api/businesses",
+                    {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify(businessData)
+                    }
+                );
+
+                const data = await response.json();
+
+                if (!response.ok) {
+                    throw new Error(
+                        data.message || "Business account creation failed"
+                    );
+                }
+
+                alert("Business account created successfully!");
+
+                localStorage.setItem(
+                    "grroxBusinessId",
+                    data.business._id
+                );
+
+                localStorage.setItem(
+                    "grroxBusinessName",
+                    data.business.businessName
+                );
+
+                document.getElementById(
+                    "businessSignupScreen"
+                ).style.display = "none";
+
+                document.getElementById(
+                    "businessDashboard"
+                ).style.display = "block";
+
+                document.getElementById(
+                    "dashboardBusinessName"
+                ).innerText =
+                    data.business.businessName || "Your Business";
+
+            } catch (error) {
+
+                console.error("Business signup error:", error);
+
+                alert(error.message);
+            }
+        }
+    </script>
+
+    <!-- BUSINESS OTP SCREEN -->
+    <div id="businessOTPScreen" class="login-screen" style="display:none;">
+        <div class="login-box">
+
+            <div class="login-logo">GRROX</div>
+            <div class="login-tagline">Where Local Connects</div>
+
+            <h2>Verify Mobile Number</h2>
+
+            <p class="login-subtitle">
+                Enter the 6-digit OTP sent to your mobile number
+            </p>
+
+            <div style="text-align:left;">
+
+                <label style="display:block;font-size:13px;font-weight:600;margin-bottom:7px;">
+                    OTP
+                </label>
+
+                <input id="businessOTP" type="text" inputmode="numeric" maxlength="6" placeholder="Enter 6-digit OTP"
+                    style="width:100%;padding:13px;border:1px solid #ddd;border-radius:8px;font-size:18px;letter-spacing:5px;text-align:center;box-sizing:border-box;">
+
+                <button onclick="verifyBusinessOTP()"
+                    style="width:100%;margin-top:15px;background:#2874f0;color:white;border:none;padding:13px;border-radius:8px;font-weight:bold;cursor:pointer;">
+                    Verify & Continue
+                </button>
+
+            </div>
+
+            <p style="margin-top:20px;font-size:13px;color:#777;">
+                Didn't receive OTP?
+            </p>
+
+            <button onclick="sendBusinessOTP()"
+                style="background:none;border:none;color:#2874f0;font-weight:bold;cursor:pointer;">
+                Resend OTP
+            </button>
+
+            <br>
+
+            <button onclick="backToBusinessLogin()"
+                style="margin-top:20px;background:none;border:none;color:#777;cursor:pointer;">
+                ← Back
+            </button>
+
+        </div>
+    </div>
+
+    <!-- BUSINESS SIGNUP SCREEN -->
+    <div id="businessSignupScreen" class="login-screen" style="display:none;">
+        <div class="login-box" style="max-height:90vh;overflow-y:auto;">
+
+            <div class="login-logo">GRROX</div>
+            <div class="login-tagline">Where Local Connects</div>
+
+            <h2>Create Business Account</h2>
+            <p class="login-subtitle">
+                Enter your business details to get started
+            </p>
+
+            <div style="text-align:left;">
+
+                <label>Owner / Contact Name</label>
+                <input id="signupOwnerName" type="text" placeholder="Enter owner name">
+
+                <label>Mobile Number</label>
+                <input id="signupMobile" type="tel" maxlength="10" placeholder="Enter mobile number">
+
+                <label>Business / Shop Name</label>
+                <input id="signupBusinessName" type="text" placeholder="Enter shop name">
+
+                <label>Business Category</label>
+                <select id="signupCategory">
+                    <option value="">Select Category</option>
+                    <option>Electronics</option>
+                    <option>Fashion</option>
+                    <option>Grocery</option>
+                    <option>Stationery</option>
+                    <option>Food & Restaurant</option>
+                    <option>Beauty & Salon</option>
+                    <option>Home Services</option>
+                    <option>Other</option>
+                </select>
+
+                <label>Business Address</label>
+                <textarea id="signupAddress" placeholder="Enter business address"></textarea>
+
+                <label>City</label>
+                <input id="signupCity" type="text" placeholder="Enter city">
+
+                <label>Area</label>
+                <input id="signupArea" type="text" placeholder="Enter area">
+
+                <label>Pincode</label>
+                <input id="signupPincode" type="text" maxlength="6" placeholder="Enter pincode">
+
+                <button onclick="createBusinessAccount()"
+                    style="width:100%;margin-top:18px;background:#2874f0;color:white;border:none;padding:13px;border-radius:8px;font-weight:bold;cursor:pointer;">
+                    Create Business Account
+                </button>
+
+            </div>
+
+            <button onclick="backToBusinessLogin()"
+                style="margin-top:18px;background:none;border:none;color:#777;cursor:pointer;">
+                ← Back
+            </button>
+
+        </div>
+    </div>
+
+    <!-- BUSINESS DASHBOARD -->
+    <div id="businessDashboard" style="display:none;">
+
+        <div class="business-dashboard">
+
+            <!-- SIDEBAR -->
+            <aside class="business-sidebar">
+
+                <div class="business-brand">
+                    <div>GRROX</div>
+                    <span>Business Dashboard</span>
+                </div>
+
+                <button class="business-menu active" onclick="showBusinessSection('overview')">
+                    🏠 Overview
+                </button>
+
+                <button class="business-menu" onclick="showBusinessSection('deals'); loadBusinessDeals()">
+                    📦 My Deals
+                </button>
+
+                <button class="business-menu" onclick="showBusinessSection('addDeal')">
+                    ➕ Add Deal
+                </button>
+
+                <button class="business-menu" onclick="showBusinessSection('shop')">
+                    🏪 My Shop
+                </button>
+
+                <button class="business-menu" onclick="showBusinessSection('customers')">
+                    👥 Customers
+                </button>
+
+                <button class="business-menu" onclick="showBusinessSection('analytics')">
+                    📊 Analytics
+                </button>
+
+                <button class="business-menu" onclick="showBusinessSection('settings')">
+                    ⚙️ Settings
+                </button>
+
+                <button class="business-menu logout" onclick="businessLogout()">
+                    🚪 Logout
+                </button>
+
+            </aside>
+
+
+            <!-- MAIN AREA -->
+            <main class="business-main">
+
+                <header class="business-topbar">
+                    <div>
+                        <h2>Business Dashboard</h2>
+                        <p>Manage your business on GRROX</p>
+                    </div>
+
+                    <div class="business-profile">
+                        🏪
+                        <span id="dashboardBusinessName">Your Business</span>
+                    </div>
+                </header>
+
+
+                <!-- OVERVIEW -->
+                <section id="businessOverview" class="business-section">
+
+                    <div class="business-welcome">
+                        <div>
+                            <h1>Welcome back!</h1>
+                            <p>Here's what's happening with your business.</p>
+                        </div>
+
+                        <div class="verification-box">
+                            <span>GRROX Verification</span>
+                            <strong>Unverified</strong>
+                        </div>
+                    </div>
+
+
+                    <div class="dashboard-cards">
+
+                        <div class="dashboard-card">
+                            <span>Active Deals</span>
+                            <strong>0</strong>
+                        </div>
+
+                        <div class="dashboard-card">
+                            <span>Total Deal Views</span>
+                            <strong>0</strong>
+                        </div>
+
+                        <div class="dashboard-card">
+                            <span>Total Claims</span>
+                            <strong>0</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="dashboard-panel">
+
+                        <div class="panel-heading">
+                            <h3>Shop Status</h3>
+                            <span class="shop-open">🟢 Open</span>
+                        </div>
+
+                        <p>Your shop is currently visible to customers.</p>
+
+                    </div>
+
+
+                    <div class="dashboard-panel">
+
+                        <div class="panel-heading">
+                            <h3>Recent Deals</h3>
+
+                            <button onclick="showBusinessSection('addDeal')">
+                                + Add Deal
+                            </button>
+                        </div>
+
+                        <div class="empty-business">
+                            <div>📦</div>
+                            <h3>No deals yet</h3>
+                            <p>Create your first deal to start reaching local customers.</p>
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- OTHER SECTIONS -->
+                <section id="businessDeals" class="business-section" style="display:none;">
+
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">
+                        <div>
+                            <h1 style="margin:0;">My Deals</h1>
+                            <p style="margin-top:5px;">Manage your deals and offers.</p>
+                        </div>
+
+                        <button onclick="showBusinessSection('addDeal')"
+                            style="background:#2874f0;color:white;border:none;padding:10px 16px;border-radius:7px;font-weight:600;cursor:pointer;">
+                            + Add Deal
+                        </button>
+                    </div>
+
+                    <div id="businessDealsContainer">
+
+                        <div
+                            style="background:white;border:1px solid #e5e7eb;border-radius:10px;padding:40px;text-align:center;color:#777;">
+                            <div style="font-size:40px;">📦</div>
+                            <h3 style="color:#333;">Loading deals...</h3>
+                            <p>Your business deals will appear here.</p>
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <section id="businessAddDeal" class="business-section" style="display:none;">
+
+                    <div style="margin-bottom:20px;">
+                        <h1 style="margin:0;">Add Deal</h1>
+                        <p style="margin-top:5px;color:#777;">
+                            Create a new deal for your customers.
+                        </p>
+                    </div>
+
+                    <div style="
+        background:white;
+        border:1px solid #e5e7eb;
+        border-radius:12px;
+        padding:22px;
+        max-width:700px;
+    ">
+
+                        <label>Deal / Product Name</label>
+                        <input id="dealName" type="text" placeholder="Example: Wireless Earbuds">
+
+                        <label>Category</label>
+                        <select id="dealCategory">
+                            <option value="">Select Category</option>
+                            <option>Electronics</option>
+                            <option>Fashion</option>
+                            <option>Grocery</option>
+                            <option>Stationery</option>
+                            <option>Food & Restaurant</option>
+                            <option>Beauty & Salon</option>
+                            <option>Home Services</option>
+                            <option>Other</option>
+                        </select>
+
+                        <label>MRP</label>
+                        <input id="dealMRP" type="number" placeholder="Example: 1999">
+
+                        <label>Deal Price</label>
+                        <input id="dealPrice" type="number" placeholder="Example: 999">
+
+                        <label>Offer</label>
+                        <input id="dealOffer" type="text" placeholder="Example: 50% OFF">
+
+                        <label>Description</label>
+                        <textarea id="dealDescription" placeholder="Describe your deal..."></textarea>
+
+                        <label>Product Image URL</label>
+                        <input id="dealImage" type="text" placeholder="Paste image URL">
+
+                        <button onclick="saveBusinessDeal()" style="
+                width:100%;
+                margin-top:20px;
+                background:#2874f0;
+                color:white;
+                border:none;
+                padding:13px;
+                border-radius:8px;
+                font-weight:bold;
+                cursor:pointer;
+            ">
+                            Save Deal
+                        </button>
+
+                    </div>
+
+                </section>
+
+                <section id="businessShop" class="business-section" style="display:none;">
+                    <h1>My Shop</h1>
+                    <p>Manage your business information.</p>
+                </section>
+
+                <section id="businessCustomers" class="business-section" style="display:none;">
+                    <h1>Customers</h1>
+                    <p>View customer activity and claims.</p>
+                </section>
+
+                <section id="businessAnalytics" class="business-section" style="display:none;">
+                    <h1>Analytics</h1>
+                    <p>View your deal performance and customer engagement.</p>
+                </section>
+
+                <section id="businessSettings" class="business-section" style="display:none;">
+                    <h1>Settings</h1>
+                    <p>Manage your business account settings.</p>
+                </section>
+
+            </main>
+
+        </div>
+
+    </div>
 
 </body>
 
